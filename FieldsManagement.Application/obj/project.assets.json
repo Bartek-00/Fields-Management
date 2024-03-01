@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Application\\FieldsManagement.Application.csproj",
+      "projectUniqueName": "C:\\Users\\bartk\\Source\\Repos\\FieldsManagerTest\\FieldsManagement.Application\\FieldsManagement.Application.csproj",
       "projectName": "FieldsManagement.Application",
-      "projectPath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Application\\FieldsManagement.Application.csproj",
+      "projectPath": "C:\\Users\\bartk\\Source\\Repos\\FieldsManagerTest\\FieldsManagement.Application\\FieldsManagement.Application.csproj",
       "packagesPath": "C:\\Users\\bartk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Application\\obj\\",
+      "outputPath": "C:\\Users\\bartk\\Source\\Repos\\FieldsManagerTest\\FieldsManagement.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bartk\\AppData\\Roaming\\NuGet\\NuGet.Config",

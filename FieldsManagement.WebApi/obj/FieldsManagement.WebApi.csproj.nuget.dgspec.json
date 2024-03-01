@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj": {}
+    "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj": {
+    "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj",
         "projectName": "FieldsManagement.WebApi",
-        "projectPath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj",
+        "projectPath": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.WebApi\\FieldsManagement.WebApi.csproj",
         "packagesPath": "C:\\Users\\bartk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bartk\\AppData\\Roaming\\NuGet\\NuGet.Config",

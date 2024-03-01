@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xcqh8XR3f1OxH0m6vSSal6GxN43iCdOZ2K0TqNhpE6B6EVH8zEzMaQ1eT1YxBLuW7bxjMHgsm8oGE4bZIlA6og==",
+  "dgSpecHash": "Pxtqpv2mtxvBJYu4Ptux1zplN+5E3F/CfH88XzHw05Whew4oCIzcyuu4Kupqi2ujE9J1akzTQd4MorbORx/QLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Core\\FieldsManagement.Core.csproj",
+  "projectFilePath": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Core\\FieldsManagement.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bartk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\bartk\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj": {}
+    "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj": {
+    "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj",
         "projectName": "FieldsManagement.Infrastructure",
-        "projectPath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Infrastructure\\FieldsManagement.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\bartk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bartk\\source\\repos\\Fields-Management\\FieldsManagement.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bartk\\AppData\\Roaming\\NuGet\\NuGet.Config",
