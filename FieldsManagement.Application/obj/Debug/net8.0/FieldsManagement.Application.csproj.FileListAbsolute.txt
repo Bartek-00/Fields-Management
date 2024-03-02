@@ -6,3 +6,10 @@ C:\Users\bartk\source\repos\Fields-Management\FieldsManagement.Application\obj\D
 C:\Users\bartk\source\repos\Fields-Management\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\bartk\source\repos\Fields-Management\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\bartk\source\repos\Fields-Management\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.sourcelink.json
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.csproj.AssemblyReference.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.AssemblyInfoInputs.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.AssemblyInfo.cs
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.Application\obj\Debug\net8.0\FieldsManagement.Application.sourcelink.json

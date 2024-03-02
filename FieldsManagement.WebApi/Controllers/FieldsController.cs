@@ -1,10 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using CoreRock.Shared.CQRS.Handlers;
+using FieldsManagement.Application.Commands;
 
 namespace FieldsManagement.WebApi.Controllers;
-public class FieldsController : Controller
+
+[ApiController]
+[Route("[controller]")]
+public class FieldsController : ControllerBase
 {
-    public IActionResult Index()
+    private readonly IDispatcher _dispatcher;
+
+    public FieldsController(IDispatcher dispatcher)
     {
-        return View();
+        _dispatcher = dispatcher;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Add(CreateFields command)
+    {
+        await _dispatcher.SendAsync(command);
+        return Created();
     }
 }

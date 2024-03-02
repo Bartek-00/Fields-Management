@@ -31,3 +31,13 @@ C:\Users\bartk\source\repos\Fields-Management\FieldsManagement.WebApi\obj\Debug\
 C:\Users\bartk\source\repos\Fields-Management\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.pdb
 C:\Users\bartk\Source\Repos\Fields-Management\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.genruntimeconfig.cache
 C:\Users\bartk\Source\Repos\Fields-Management\FieldsManagement.WebApi\obj\Debug\net8.0\ref\FieldsManagement.WebApi.dll
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.csproj.AssemblyReference.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.AssemblyInfoInputs.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.AssemblyInfo.cs
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.sourcelink.json
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.dll
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\refint\FieldsManagement.WebApi.dll
+C:\Users\bartk\source\repos\FieldsManagerTest\FieldsManagement.WebApi\obj\Debug\net8.0\FieldsManagement.WebApi.pdb

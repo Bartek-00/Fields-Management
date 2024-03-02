@@ -11,4 +11,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS.Abstractions\CoreRock.Shared.CQRS.Abstractions.csproj" />
+    <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS\CoreRock.Shared.CQRS.csproj" />
+    <ProjectReference Include="..\FieldsManagement.Application\FieldsManagement.Application.csproj" />
+    <ProjectReference Include="..\FieldsManagement.Infrastructure\FieldsManagement.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
