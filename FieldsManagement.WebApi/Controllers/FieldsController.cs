@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using CoreRock.Shared.CQRS.Handlers;
 using FieldsManagement.Application.Commands;
 
 namespace FieldsManagement.WebApi.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class FieldsController : ControllerBase
+[Route("api/v1/[controller]")]
+public class FieldsController : Controller
 {
     private readonly IDispatcher _dispatcher;
 
@@ -16,7 +14,8 @@ public class FieldsController : ControllerBase
         _dispatcher = dispatcher;
     }
 
-    [HttpPost]
+    [HttpPost("create")]
+    [ProducesResponseType(typeof(void), StatusCodes.Status201Created)]
     public async Task<IActionResult> Add(CreateFields command)
     {
         await _dispatcher.SendAsync(command);

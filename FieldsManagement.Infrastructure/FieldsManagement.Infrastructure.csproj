@@ -5,14 +5,18 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CoreRock.Shared.DataAccess.Mongo" Version="1.0.1" />
     <PackageReference Include="MongoDB.Driver" Version="2.24.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS.Abstractions\CoreRock.Shared.CQRS.Abstractions.csproj" />
+    <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS\CoreRock.Shared.CQRS.csproj" />
     <ProjectReference Include="..\FieldsManagement.Core\FieldsManagement.Core.csproj" />
   </ItemGroup>
 
