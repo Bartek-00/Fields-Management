@@ -1,6 +1,13 @@
-@FieldsManagement.WebApi_HostAddress = http://localhost:5088
+@FieldsManagement.WebApi_HostAddress = http://localhost:7138
 
-GET {{FieldsManagement.WebApi_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{FieldsManagement.WebApi_HostAddress}}/Fields/
+Content-Type: application/json
+
+{
+  "Id": "123",
+  "VillageName": "ExampleVillage",
+  "Area": 123.45,
+  "additionalData": "Some additional data"
+}
 
 ###

@@ -284,7 +284,7 @@
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -349,7 +349,7 @@
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -400,6 +400,12 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\bartk\\source\\repos\\CoreRock.Shared.CQRS\\src\\CoreRock.Shared.CQRS.Abstractions\\CoreRock.Shared.CQRS.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\bartk\\source\\repos\\CoreRock.Shared.CQRS\\src\\CoreRock.Shared.CQRS.Abstractions\\CoreRock.Shared.CQRS.Abstractions.csproj"
+              },
+              "C:\\Users\\bartk\\source\\repos\\CoreRock.Shared.CQRS\\src\\CoreRock.Shared.CQRS\\CoreRock.Shared.CQRS.csproj": {
+                "projectPath": "C:\\Users\\bartk\\source\\repos\\CoreRock.Shared.CQRS\\src\\CoreRock.Shared.CQRS\\CoreRock.Shared.CQRS.csproj"
+              },
               "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Core\\FieldsManagement.Core.csproj": {
                 "projectPath": "C:\\Users\\bartk\\source\\repos\\FieldsManagerTest\\FieldsManagement.Core\\FieldsManagement.Core.csproj"
               }
@@ -416,13 +422,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "CoreRock.Shared.DataAccess.Mongo": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.24.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
