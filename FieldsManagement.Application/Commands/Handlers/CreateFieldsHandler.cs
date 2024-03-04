@@ -1,13 +1,13 @@
-﻿using CoreRock.Shared.CQRS.Handlers;
-using FieldsManagement.Core.Entities;
+﻿using FieldsManagement.Core.Entities;
 using FieldsManagement.Core.Repositories;
+using MediatR;
 
 namespace FieldsManagement.Application.Commands.Handlers;
 
-public class CreateFieldsHandler(IFieldsRepository fieldsRepository) : ICommandHandler<CreateFields>
+public class CreateFieldsHandler(IFieldsRepository fieldsRepository) : INotificationHandler<CreateFields>
 {
-    public async Task HandleAsync(CreateFields command, CancellationToken cancellationToken = default)
+    public async Task Handle(CreateFields notification, CancellationToken cancellationToken = default)
     {
-        await fieldsRepository.Create(new Fields(command.Id, command.VillageName, command.Area, command.additionalData));
+        await fieldsRepository.Create(new Fields(notification.Id, notification.VillageName, notification.Area, notification.AdditionalData));
     }
 }

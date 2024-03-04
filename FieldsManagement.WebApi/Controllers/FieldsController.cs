@@ -1,25 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using CoreRock.Shared.CQRS.Handlers;
+﻿using Amazon.Runtime.Internal;
 using FieldsManagement.Application.Commands;
+using FieldsManagement.Core.Entities;
+using FieldsManagement.Infrastructure.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace FieldsManagement.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class FieldsController : ControllerBase
+public class FieldsController(IMediator mediator) : ControllerBase
 {
-    private readonly IDispatcher _dispatcher;
-
-    public FieldsController(IDispatcher dispatcher)
-    {
-        _dispatcher = dispatcher;
-    }
-
     [HttpPost]
     public async Task<IActionResult> Add(CreateFields command)
     {
-        await _dispatcher.SendAsync(command);
-        return Created();
+        await mediator.Publish(new CreateFields(command.Id, command.VillageName, command.Area, command.AdditionalData));
+        return Created(nameof(Add), null);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var fields = await mediator.Send(new GetAllQuery());
+        Debug.WriteLine(fields.Count);
+        return Ok(fields);
     }
 }

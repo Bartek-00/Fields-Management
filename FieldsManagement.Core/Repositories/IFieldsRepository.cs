@@ -11,4 +11,6 @@ public interface IFieldsRepository
     Task Delete(Fields fields);
 
     Task FindByVillageName(string villageName);
+
+    Task<List<Fields>> GetAll();
 }
