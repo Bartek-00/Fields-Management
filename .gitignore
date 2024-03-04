@@ -549,3 +549,14 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,aspnetcore
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.AssemblyInfo.cs
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.AssemblyInfoInputs.cache
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.csproj.AssemblyReference.cache
+/FieldsManagement.Core/obj/Debug/net8.0/FieldsManagement.Core.AssemblyInfo.cs
+/FieldsManagement.Core/obj/Debug/net8.0/FieldsManagement.Core.AssemblyInfoInputs.cache
+/FieldsManagement.Infrastructure/obj/Debug/net8.0/FieldsManagement.Infrastructure.AssemblyInfo.cs
+/FieldsManagement.Infrastructure/obj/Debug/net8.0/FieldsManagement.Infrastructure.AssemblyInfoInputs.cache
+/FieldsManagement.Infrastructure/obj/Debug/net8.0/FieldsManagement.Infrastructure.csproj.AssemblyReference.cache
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.AssemblyInfo.cs
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.AssemblyInfoInputs.cache
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.csproj.AssemblyReference.cache
