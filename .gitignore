@@ -560,3 +560,15 @@ FodyWeavers.xsd
 /FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.AssemblyInfo.cs
 /FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.AssemblyInfoInputs.cache
 /FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.csproj.AssemblyReference.cache
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.assets.cache
+/FieldsManagement.WebApi/obj/project.assets.json
+/FieldsManagement.WebApi/obj/project.nuget.cache
+/FieldsManagement.WebApi/obj/FieldsManagement.WebApi.csproj.nuget.dgspec.json
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.assets.cache
+/FieldsManagement.Application/obj/project.assets.json
+/FieldsManagement.Application/obj/FieldsManagement.Application.csproj.nuget.dgspec.json
+/FieldsManagement.Application/obj/project.nuget.cache
+/FieldsManagement.Infrastructure/obj/Debug/net8.0/FieldsManagement.Infrastructure.assets.cache
+/FieldsManagement.Infrastructure/obj/FieldsManagement.Infrastructure.csproj.nuget.dgspec.json
+/FieldsManagement.Infrastructure/obj/project.assets.json
+/FieldsManagement.Infrastructure/obj/project.nuget.cache
