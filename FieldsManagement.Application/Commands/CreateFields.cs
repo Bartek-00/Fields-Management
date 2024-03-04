@@ -1,6 +1,7 @@
-﻿using CoreRock.Shared.CQRS.Abstractions;
-using FieldsManagement.Core.Entities;
+﻿using MediatR;
 
 namespace FieldsManagement.Application.Commands;
 
-public record CreateFields(string Id, string VillageName, double Area, string additionalData) : ICommand;
+public record CreateFields(string Id, string VillageName, double Area, string AdditionalData) : INotification
+{
+}
