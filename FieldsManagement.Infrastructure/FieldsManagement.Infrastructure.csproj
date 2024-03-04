@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS.Abstractions\CoreRock.Shared.CQRS.Abstractions.csproj" />
     <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS\CoreRock.Shared.CQRS.csproj" />
     <ProjectReference Include="..\FieldsManagement.Core\FieldsManagement.Core.csproj" />
   </ItemGroup>
