@@ -1,8 +1,6 @@
-﻿using CoreRock.Shared.CQRS.Handlers;
-using FieldsManagement.Core.Repositories;
+﻿using FieldsManagement.Core.Repositories;
 using FieldsManagement.Infrastructure.InfrastructureModel;
 using FieldsManagement.Infrastructure.Repositories;
-using Microsoft.AspNetCore.Components;
 using MongoDB.Driver;
 
 namespace FieldsManagement.Infrastructure.Extensions
@@ -15,8 +13,7 @@ namespace FieldsManagement.Infrastructure.Extensions
             services.Configure<DataBaseConfiguration>(configuration.GetSection("DatabaseConfiguration"));
 
             services.AddHttpClient();
-            services.AddMongoDb(configuration); // Add this line to register MongoDB dependencies
-            services.AddSingleton<IDispatcher>();
+            services.AddMongoDb(configuration);
 
             services.AddTransient<IFieldsRepository, FieldsRepository>();
 
