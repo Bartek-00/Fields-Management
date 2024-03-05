@@ -572,3 +572,17 @@ FodyWeavers.xsd
 /FieldsManagement.Infrastructure/obj/FieldsManagement.Infrastructure.csproj.nuget.dgspec.json
 /FieldsManagement.Infrastructure/obj/project.assets.json
 /FieldsManagement.Infrastructure/obj/project.nuget.cache
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.csproj.CoreCompileInputs.cache
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.csproj.FileListAbsolute.txt
+/FieldsManagement.Application/obj/Debug/net8.0/FieldsManagement.Application.sourcelink.json
+/FieldsManagement.Application/obj/FieldsManagement.Application.csproj.nuget.g.targets
+/FieldsManagement.Core/obj/Debug/net8.0/FieldsManagement.Core.assets.cache
+/FieldsManagement.Core/obj/FieldsManagement.Core.csproj.nuget.dgspec.json
+/FieldsManagement.Core/obj/project.nuget.cache
+/FieldsManagement.Core/obj/Debug/net8.0/FieldsManagement.Core.csproj.AssemblyReference.cache
+/FieldsManagement.Core/obj/project.assets.json
+/FieldsManagement.Infrastructure/obj/FieldsManagement.Infrastructure.csproj.nuget.g.targets
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.csproj.CoreCompileInputs.cache
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.sourcelink.json
+/FieldsManagement.WebApi/obj/FieldsManagement.WebApi.csproj.nuget.g.targets
+/FieldsManagement.WebApi/obj/Debug/net8.0/FieldsManagement.WebApi.csproj.FileListAbsolute.txt
