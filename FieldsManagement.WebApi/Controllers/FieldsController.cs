@@ -15,7 +15,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Add(CreateFields command)
     {
-        await mediator.Publish(new CreateFields(command.Id, command.VillageName, command.Area, command.AdditionalData));
+        await mediator.Publish(command);
         return Created(nameof(Add), null);
     }
 
