@@ -8,9 +8,11 @@ public interface IFieldsRepository
 
     Task Update(Fields fields);
 
-    Task Delete(Fields fields);
+    Task Delete(Guid Id);
 
-    Task FindByVillageName(string villageName);
+    Task<List<Fields>> FindByVillageName(string villageName);
 
     Task<List<Fields>> GetAll();
+
+    Task<Fields> FindById(Guid id);
 }

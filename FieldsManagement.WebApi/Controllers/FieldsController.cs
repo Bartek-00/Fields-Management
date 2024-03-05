@@ -4,6 +4,7 @@ using FieldsManagement.Core.Entities;
 using FieldsManagement.Infrastructure.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 using System.Diagnostics;
 
 namespace FieldsManagement.WebApi.Controllers;
@@ -19,11 +20,32 @@ public class FieldsController(IMediator mediator) : ControllerBase
         return Created(nameof(Add), null);
     }
 
+    [HttpPut]
+    public async Task<IActionResult> Update(UpdateFields command)
+    {
+        await mediator.Publish(command);
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] Guid id)
+    {
+        var command = new DeleteFields(id);
+        await mediator.Publish(command);
+        return NoContent();
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
         var fields = await mediator.Send(new GetAllQuery());
-        Debug.WriteLine(fields.Count);
+        return Ok(fields);
+    }
+
+    [HttpGet("Village/{VillageName}")]
+    public async Task<IActionResult> GetByVillage([FromRoute] string VillageName)
+    {
+        var fields = await mediator.Send(new GetByVillageQuery(VillageName));
         return Ok(fields);
     }
 }
