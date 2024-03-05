@@ -19,8 +19,9 @@ builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblyContaining<Program>()
     );
 
-builder.Services.AddScoped<IRequestHandler<GetAllQuery, List<Fields>>, GetAllQueryHandler>();
 builder.Services.AddScoped<INotificationHandler<CreateFields>, CreateFieldsHandler>();
+builder.Services.AddScoped<INotificationHandler<DeleteFields>, DeleteFieldsHandler>();
+builder.Services.AddScoped<INotificationHandler<UpdateFields>, UpdateFieldsHandler>();
 
 var app = builder.Build();
 

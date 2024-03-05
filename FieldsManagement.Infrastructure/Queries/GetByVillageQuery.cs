@@ -2,5 +2,4 @@
 using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries;
-
-public record GetAllQuery : IRequest<List<Fields>>;
+public record GetByVillageQuery(string VillageName) : IRequest<List<Fields>>;

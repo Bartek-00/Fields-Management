@@ -10,7 +10,7 @@ public class FieldsRepository : IFieldsRepository
 
     public FieldsRepository(IMongoDatabase mongoDatabase)
     {
-        _collection = mongoDatabase.GetCollection<Fields>("FieldsCollection");
+        _collection = mongoDatabase.GetCollection<Fields>("Fields");
     }
 
     public async Task Create(Fields fields)
@@ -19,11 +19,14 @@ public class FieldsRepository : IFieldsRepository
     public async Task Update(Fields fields)
         => await _collection.ReplaceOneAsync(x => x.Id == fields.Id, fields);
 
-    public async Task Delete(Fields fields)
-        => await _collection.DeleteOneAsync(x => x.Id == fields.Id);
+    public async Task Delete(Guid Id)
+        => await _collection.DeleteOneAsync(x => x.Id == Id);
 
-    public async Task FindByVillageName(string villageName)
+    public async Task<List<Fields>> FindByVillageName(string villageName)
         => await _collection.Find(x => x.VillageName == villageName).ToListAsync();
+
+    public async Task<Fields> FindById(Guid id)
+        => await _collection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
     public async Task<List<Fields>> GetAll()
         => await _collection.Find(x => true).ToListAsync();

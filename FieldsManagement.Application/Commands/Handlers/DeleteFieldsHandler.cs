@@ -7,6 +7,6 @@ public class DeleteFieldsHandler(IFieldsRepository fieldsRepository) : INotifica
 {
     public async Task Handle(DeleteFields notification, CancellationToken cancellationToken = default)
     {
-        fieldsRepository.Delete(notification.Id);
+        await fieldsRepository.Delete(notification.Id);
     }
 }
