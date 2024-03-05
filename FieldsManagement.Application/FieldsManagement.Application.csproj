@@ -8,11 +8,11 @@
 	</PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CoreRock.Shared.CQRS\src\CoreRock.Shared.CQRS\CoreRock.Shared.CQRS.csproj" />
     <ProjectReference Include="..\FieldsManagement.Core\FieldsManagement.Core.csproj" />
     <ProjectReference Include="..\FieldsManagement.Infrastructure\FieldsManagement.Infrastructure.csproj" />
   </ItemGroup>

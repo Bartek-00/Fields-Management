@@ -2,7 +2,7 @@
 
 public class Fields
 {
-    public Fields(string id, string villageName, double area, string additionalData)
+    public Fields(Guid id, string villageName, double area, string additionalData)
     {
         Id = id;
         VillageName = villageName;
@@ -10,7 +10,7 @@ public class Fields
         AdditionalData = additionalData;
     }
 
-    public string Id { get; set; }
+    public Guid Id { get; set; }
     public string VillageName { get; set; }
     public double Area { get; set; }
     public string AdditionalData { get; set; }
