@@ -10,8 +10,8 @@ public class Fields
         AdditionalData = additionalData;
     }
 
-    public Guid Id { get; set; }
-    public string VillageName { get; set; }
-    public double Area { get; set; }
-    public string AdditionalData { get; set; }
+    public Guid Id { get; private set; }
+    public string VillageName { get; private set; }
+    public double Area { get; private set; }
+    public string AdditionalData { get; private set; }
 }
