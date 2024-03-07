@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FieldsManagement.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FieldsManagement.WebApi", "FieldsManagement.WebApi\FieldsManagement.WebApi.csproj", "{D9856875-2EF1-4C01-93CE-EA5A6252215A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldsManagement.IntegrationTests", "FieldsManagment.IntegrationTests\FieldsManagement.IntegrationTests.csproj", "{BFC1C9F0-8A61-4246-AC64-704BCA769657}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D9856875-2EF1-4C01-93CE-EA5A6252215A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9856875-2EF1-4C01-93CE-EA5A6252215A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9856875-2EF1-4C01-93CE-EA5A6252215A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC1C9F0-8A61-4246-AC64-704BCA769657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1C9F0-8A61-4246-AC64-704BCA769657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC1C9F0-8A61-4246-AC64-704BCA769657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC1C9F0-8A61-4246-AC64-704BCA769657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
