@@ -1,5 +1,7 @@
-﻿using FieldsManagment.IntegrationTests;
-using System;
+﻿using FieldsManagement.Core.Entities;
+using FieldsManagment.IntegrationTests;
+using FluentAssertions;
+using System.Net.Http.Json;
 using Xunit.Abstractions;
 
 namespace FieldsManagement.IntegrationTests;
@@ -19,7 +21,15 @@ public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
     {
         var client = _webAppFactory.CreateClient();
 
-        // Act
-        var response = await client.GetAsync("");
+        var field = new Fields(
+            id: Guid.NewGuid(),
+            villageName: "makapaka",
+            area: 30,
+            additionalData: ""
+            );
+
+        var response = await client.PostAsJsonAsync("/Fields", field);
+        var getReservation = await client.GetFromJsonAsync<List<Fields>>("/Fields");
+        getReservation!.Count.Should().Be(1);
     }
 }

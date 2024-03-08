@@ -1,4 +1,4 @@
-namespace FieldsManagment.IntegrationTests;
+namespace IntegrationTests;
 
 public class UnitTest1
 {
