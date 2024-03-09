@@ -21,8 +21,8 @@ namespace FieldsManagement.Infrastructure.Extensions
 
             services.AddTransient<IFieldsRepository, FieldsRepository>();
 
-            services.AddScoped<IRequestHandler<GetAllQuery, List<Fields>>, GetAllQueryHandler>();
-            services.AddScoped<IRequestHandler<GetByVillageQuery, List<Fields>>, GetByVillageQueryHandler>();
+            services.AddScoped<IRequestHandler<GetAllQuery, List<Field>>, GetAllQueryHandler>();
+            services.AddScoped<IRequestHandler<GetByVillageQuery, List<Field>>, GetByVillageQueryHandler>();
 
             return services;
         }

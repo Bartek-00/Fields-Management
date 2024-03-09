@@ -4,9 +4,9 @@ using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries.Handlers;
 
-public class GetAllQueryHandler(IFieldsRepository fieldsRepository) : IRequestHandler<GetAllQuery, List<Fields>>
+public class GetAllQueryHandler(IFieldsRepository fieldsRepository) : IRequestHandler<GetAllQuery, List<Field>>
 {
-    public async Task<List<Fields>> Handle(GetAllQuery request, CancellationToken cancellationToken = default)
+    public async Task<List<Field>> Handle(GetAllQuery request, CancellationToken cancellationToken = default)
     {
         return await fieldsRepository.GetAll();
     }
