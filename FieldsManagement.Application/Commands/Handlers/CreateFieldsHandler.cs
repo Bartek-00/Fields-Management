@@ -8,6 +8,6 @@ public class CreateFieldsHandler(IFieldsRepository fieldsRepository) : INotifica
 {
     public async Task Handle(CreateFields notification, CancellationToken cancellationToken = default)
     {
-        await fieldsRepository.Create(new Fields(notification.Id, notification.VillageName, notification.Area, notification.AdditionalData));
+        await fieldsRepository.Create(new Field(notification.Id, notification.VillageName, notification.Area, notification.AdditionalData));
     }
 }

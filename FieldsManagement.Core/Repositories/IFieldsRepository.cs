@@ -4,15 +4,15 @@ namespace FieldsManagement.Core.Repositories;
 
 public interface IFieldsRepository
 {
-    Task Create(Fields fields);
+    Task Create(Field fields);
 
-    Task Update(Fields fields);
+    Task Update(Field fields);
 
     Task Delete(Guid Id);
 
-    Task<List<Fields>> FindByVillageName(string villageName);
+    Task<List<Field>> FindByVillageName(string villageName);
 
-    Task<List<Fields>> GetAll();
+    Task<List<Field>> GetAll();
 
-    Task<Fields> FindById(Guid id);
+    Task<Field> FindById(Guid id);
 }

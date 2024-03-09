@@ -4,9 +4,9 @@ using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries.Handler;
 
-public class GetByVillageQueryHandler(IFieldsRepository fieldsRepository) : IRequestHandler<GetByVillageQuery, List<Fields>>
+public class GetByVillageQueryHandler(IFieldsRepository fieldsRepository) : IRequestHandler<GetByVillageQuery, List<Field>>
 {
-    public async Task<List<Fields>> Handle(GetByVillageQuery request, CancellationToken cancellationToken = default)
+    public async Task<List<Field>> Handle(GetByVillageQuery request, CancellationToken cancellationToken = default)
     {
         return await fieldsRepository.FindByVillageName(request.VillageName);
     }

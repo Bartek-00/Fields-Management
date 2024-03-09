@@ -13,6 +13,6 @@ public class UpdateFieldsHandler(IFieldsRepository fieldsRepository) : INotifica
         {
             throw new Exception("Nie ma takiego pola w bazie");
         }
-        await fieldsRepository.Update(new Fields(notification.Id, data.VillageName, data.Area, notification.AdditionalData));
+        await fieldsRepository.Update(new Field(notification.Id, data.VillageName, data.Area, notification.AdditionalData));
     }
 }

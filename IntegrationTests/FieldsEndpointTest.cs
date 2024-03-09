@@ -1,6 +1,7 @@
 ﻿using FieldsManagement.Core.Entities;
 using FieldsManagment.IntegrationTests;
 using FluentAssertions;
+using MySpot.Core.ValueObjects;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
 
@@ -21,15 +22,15 @@ public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
     {
         var client = _webAppFactory.CreateClient();
 
-        var field = new Fields(
-            id: Guid.NewGuid(),
+        var field = new Field(
+            fieldId: Guid.NewGuid(),
             villageName: "makapaka",
             area: 30,
             additionalData: ""
             );
 
         var response = await client.PostAsJsonAsync("/Fields", field);
-        var getReservation = await client.GetFromJsonAsync<List<Fields>>("/Fields");
+        var getReservation = await client.GetFromJsonAsync<List<Field>>("/Fields");
         getReservation!.Count.Should().Be(1);
     }
 }
