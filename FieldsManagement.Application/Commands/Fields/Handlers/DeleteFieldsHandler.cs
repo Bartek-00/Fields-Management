@@ -1,7 +1,7 @@
 ﻿using FieldsManagement.Core.Repositories;
 using MediatR;
 
-namespace FieldsManagement.Application.Commands.Handlers;
+namespace FieldsManagement.Application.Commands.Fields.Handlers;
 
 public class DeleteFieldsHandler(IFieldsRepository fieldsRepository) : INotificationHandler<DeleteFields>
 {

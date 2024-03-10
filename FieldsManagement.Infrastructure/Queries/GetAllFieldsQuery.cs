@@ -3,4 +3,4 @@ using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries;
 
-public record GetAllQuery : IRequest<List<Field>>;
+public record GetAllFieldsQuery : IRequest<List<Field>>;

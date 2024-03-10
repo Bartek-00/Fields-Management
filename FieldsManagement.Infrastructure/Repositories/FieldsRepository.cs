@@ -1,7 +1,6 @@
 ﻿using FieldsManagement.Core.Entities;
 using FieldsManagement.Core.Repositories;
 using MongoDB.Driver;
-using MySpot.Core.ValueObjects;
 
 namespace FieldsManagement.Infrastructure.Repositories;
 
@@ -18,15 +17,15 @@ public class FieldsRepository : IFieldsRepository
         => await _collection.InsertOneAsync(fields);
 
     public async Task Update(Field fields)
-        => await _collection.ReplaceOneAsync(x => x.fieldId == fields.fieldId, fields);
+        => await _collection.ReplaceOneAsync(x => x.FieldId == fields.FieldId, fields);
 
     public async Task Delete(Guid fieldId)
-        => await _collection.DeleteOneAsync(x => x.fieldId == fieldId);
+        => await _collection.DeleteOneAsync(x => x.FieldId == fieldId);
 
     public async Task<List<Field>> FindByVillageName(string villageName)
         => await _collection.Find(x => x.VillageName == villageName).ToListAsync();
 
-    public async Task<Field> FindById(Guid fieldId)
+    public async Task<Field> FindById(ObjectId fieldId)
         => await _collection.Find(x => x.FieldId == fieldId).FirstOrDefaultAsync();
 
     public async Task<List<Field>> GetAll()

@@ -1,7 +1,6 @@
 ﻿using FieldsManagement.Core.Entities;
 using FieldsManagment.IntegrationTests;
 using FluentAssertions;
-using MySpot.Core.ValueObjects;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
 
@@ -23,7 +22,7 @@ public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
         var client = _webAppFactory.CreateClient();
 
         var field = new Field(
-            fieldId: Guid.NewGuid(),
+            fieldId: ObjectId.Create(),
             villageName: "makapaka",
             area: 30,
             additionalData: ""

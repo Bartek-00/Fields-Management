@@ -1,5 +1,4 @@
 using FieldsManagement.Application.Commands;
-using FieldsManagement.Application.Commands.Handlers;
 using FieldsManagement.Core.Entities;
 using FieldsManagement.Infrastructure.Extensions;
 using FieldsManagement.Infrastructure.Queries.Handlers;
@@ -7,6 +6,8 @@ using FieldsManagement.Infrastructure.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using FieldsManagement.Application.Commands.Fields.Handlers;
+using FieldsManagement.Application.Commands.Fields;
 
 var builder = WebApplication.CreateBuilder(args);
 
