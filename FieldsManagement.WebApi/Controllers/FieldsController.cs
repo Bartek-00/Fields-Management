@@ -1,5 +1,6 @@
 ﻿using Amazon.Runtime.Internal;
 using FieldsManagement.Application.Commands;
+using FieldsManagement.Application.Commands.Fields;
 using FieldsManagement.Core.Entities;
 using FieldsManagement.Infrastructure.Queries;
 using MediatR;
@@ -38,7 +39,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var fields = await mediator.Send(new GetAllQuery());
+        var fields = await mediator.Send(new GetAllFieldsQuery());
         return Ok(fields);
     }
 
