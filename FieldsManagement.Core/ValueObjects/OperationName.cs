@@ -2,11 +2,11 @@
 
 namespace FieldsManagement.Core.ValueObjects
 {
-    public sealed record WorkerSurname
+    public sealed record OperationName
     {
         public string Value { get; }
 
-        public WorkerSurname(string value)
+        public OperationName(string value)
         {
             if (string.IsNullOrWhiteSpace(value) || value.Length > 100 || value.Length < 3)
             {
@@ -16,10 +16,10 @@ namespace FieldsManagement.Core.ValueObjects
             Value = value;
         }
 
-        public static implicit operator string(WorkerSurname value)
-            => value.Value;
+        public static implicit operator string(OperationName name)
+            => name.Value;
 
-        public static implicit operator WorkerSurname(string value)
-            => new WorkerSurname(value);
+        public static implicit operator OperationName(string value)
+            => new OperationName(value);
     }
 }

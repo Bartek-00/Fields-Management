@@ -4,9 +4,9 @@ using MediatR;
 
 namespace FieldsManagement.Application.Commands.Fields.Handlers;
 
-public class CreateFieldsHandler(IFieldsRepository fieldsRepository) : INotificationHandler<CreateFields>
+public class CreateFieldHandler(IFieldsRepository fieldsRepository) : INotificationHandler<CreateField>
 {
-    public async Task Handle(CreateFields notification, CancellationToken cancellationToken = default)
+    public async Task Handle(CreateField notification, CancellationToken cancellationToken = default)
     {
         await fieldsRepository.Create(new Field(notification.Id, notification.VillageName, notification.Area, notification.AdditionalData));
     }

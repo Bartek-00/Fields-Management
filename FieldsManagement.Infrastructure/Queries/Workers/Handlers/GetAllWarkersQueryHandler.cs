@@ -1,8 +1,9 @@
 ﻿using FieldsManagement.Core.Entities;
 using FieldsManagement.Core.Repositories;
+using FieldsManagement.Infrastructure.Queries.Workers;
 using MediatR;
 
-namespace FieldsManagement.Infrastructure.Queries.Handler;
+namespace FieldsManagement.Infrastructure.Queries.Workers.Handlers;
 
 public class GetAllWarkersQueryHandler(IWorkerRespository workerRespository) : IRequestHandler<GetAllWarkersQuery, List<Worker>>
 {

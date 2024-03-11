@@ -4,9 +4,9 @@ using MediatR;
 
 namespace FieldsManagement.Application.Commands.Fields.Handlers;
 
-public class UpdateFieldsHandler(IFieldsRepository fieldsRepository) : INotificationHandler<UpdateFields>
+public class UpdateFieldsHandler(IFieldsRepository fieldsRepository) : INotificationHandler<UpdateField>
 {
-    public async Task Handle(UpdateFields notification, CancellationToken cancellationToken = default)
+    public async Task Handle(UpdateField notification, CancellationToken cancellationToken = default)
     {
         var data = await fieldsRepository.FindById(notification.Id);
         if (data == null)

@@ -1,12 +1,9 @@
-﻿using Amazon.Runtime.Internal;
-using FieldsManagement.Application.Commands;
+﻿using FieldsManagement.Application.Commands;
 using FieldsManagement.Application.Commands.Fields;
-using FieldsManagement.Core.Entities;
 using FieldsManagement.Infrastructure.Queries;
+using FieldsManagement.Infrastructure.Queries.Fields;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Driver;
-using System.Diagnostics;
 
 namespace FieldsManagement.WebApi.Controllers;
 
@@ -15,14 +12,14 @@ namespace FieldsManagement.WebApi.Controllers;
 public class FieldsController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Add(CreateFields command)
+    public async Task<IActionResult> Add(CreateField command)
     {
         await mediator.Publish(command);
         return Created(nameof(Add), null);
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update(UpdateFields command)
+    public async Task<IActionResult> Update(UpdateField command)
     {
         await mediator.Publish(command);
         return Ok();
@@ -31,7 +28,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
-        var command = new DeleteFields(id);
+        var command = new DeleteField(id);
         await mediator.Publish(command);
         return NoContent();
     }
@@ -46,7 +43,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     [HttpGet("Village/{VillageName}")]
     public async Task<IActionResult> GetByVillage([FromRoute] string VillageName)
     {
-        var fields = await mediator.Send(new GetByVillageQuery(VillageName));
+        var fields = await mediator.Send(new GetFieldsByVillageQuery(VillageName));
         return Ok(fields);
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace FieldsManagement.Core.Entities;
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace FieldsManagement.Core.Entities;
 
 public class Field
 {
@@ -10,9 +12,10 @@ public class Field
         AdditionalData = additionalData;
     }
 
+    [BsonId]
     public ObjectId FieldId { get; private set; }
+
     public string VillageName { get; private set; }
     public double Area { get; private set; }
     public string AdditionalData { get; private set; }
-    private List<Action> Actions { get; set; }
 }

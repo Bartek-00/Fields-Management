@@ -8,7 +8,7 @@ public interface IWorkerRespository
 
     Task Update(Worker worker);
 
-    Task Delete(Guid workerId);
+    Task Delete(ObjectId workerId);
 
     Task<List<Worker>> GetAll();
 }
