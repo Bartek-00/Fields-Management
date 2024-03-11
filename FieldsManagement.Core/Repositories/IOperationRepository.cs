@@ -8,11 +8,11 @@ public interface IOperationRepository
 
     Task Update(Operation operation);
 
-    Task Delete(ObjectId actionId);
+    Task Delete(Guid actionId);
 
     Task<List<Operation>> GetAll();
 
-    Task<List<Operation>> GetAllByFieldId(ObjectId fieldId);
+    Task<List<Operation>> GetAllByFieldId(Guid fieldId);
 
-    Task<Operation> GetByOperationId(ObjectId actionId);
+    Task<Operation> GetByOperationId(Guid actionId);
 }

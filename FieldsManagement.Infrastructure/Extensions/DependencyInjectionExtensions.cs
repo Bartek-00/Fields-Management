@@ -32,7 +32,7 @@ namespace FieldsManagement.Infrastructure.Extensions
             services.AddScoped<IRequestHandler<GetAllWarkersQuery, List<Worker>>, GetAllWarkersQueryHandler>();
             services.AddScoped<IRequestHandler<GetFieldsByVillageQuery, List<Field>>, GetFieldsByVillageQueryHandler>();
             services.AddScoped<IRequestHandler<GetOperationsByFieldIdQuery, List<Operation>>, GetOperationsByFieldIdQueryHandler>();
-            services.AddScoped<IRequestHandler<GetOperationsQuery, IEnumerable<Operation>>, GetOperationsQueryHandler>();
+            services.AddScoped<IRequestHandler<GetOperationsQuery, List<Operation>>, GetOperationsQueryHandler>();
 
             return services;
         }

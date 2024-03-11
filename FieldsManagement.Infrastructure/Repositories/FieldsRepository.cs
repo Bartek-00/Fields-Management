@@ -25,7 +25,7 @@ public class FieldsRepository : IFieldsRepository
     public async Task<List<Field>> FindByVillageName(string villageName)
         => await _collection.Find(x => x.VillageName == villageName).ToListAsync();
 
-    public async Task<Field> FindById(ObjectId fieldId)
+    public async Task<Field> FindById(Guid fieldId)
         => await _collection.Find(x => x.FieldId == fieldId).FirstOrDefaultAsync();
 
     public async Task<List<Field>> GetAll()

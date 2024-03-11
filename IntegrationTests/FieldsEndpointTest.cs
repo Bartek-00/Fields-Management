@@ -22,7 +22,7 @@ public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
         var client = _webAppFactory.CreateClient();
 
         var field = new Field(
-            fieldId: ObjectId.Create(),
+            fieldId: Guid.NewGuid(),
             villageName: "makapaka",
             area: 30,
             additionalData: ""

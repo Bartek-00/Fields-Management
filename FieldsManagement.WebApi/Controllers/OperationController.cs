@@ -24,8 +24,8 @@ public class OperationController(IMediator mediator) : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{Id}")]
-    public async Task<ActionResult> DeleteOperation([FromQuery] ObjectId id)
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteOperation(Guid id)
     {
         var command = new DeleteOperation(id);
         await mediator.Publish(command);
@@ -40,7 +40,7 @@ public class OperationController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet("{fieldId}")]
-    public async Task<ActionResult<List<Operation>>> GetOperationsByFieldId(ObjectId fieldId)
+    public async Task<ActionResult<List<Operation>>> GetOperationsByFieldId(Guid fieldId)
     {
         var operations = await mediator.Send(new GetOperationsByFieldIdQuery(fieldId));
         return Ok(operations);

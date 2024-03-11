@@ -2,4 +2,4 @@
 
 namespace FieldsManagement.Application.Commands;
 
-public record CreateField(ObjectId Id, string VillageName, double Area, string AdditionalData) : INotification;
+public record CreateField(Guid Id, string VillageName, double Area, string AdditionalData) : INotification;

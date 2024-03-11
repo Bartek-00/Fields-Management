@@ -4,7 +4,7 @@ namespace FieldsManagement.Core.Entities;
 
 public class Field
 {
-    public Field(ObjectId fieldId, string villageName, double area, string additionalData)
+    public Field(Guid fieldId, string villageName, double area, string additionalData)
     {
         FieldId = fieldId;
         VillageName = villageName;
@@ -13,7 +13,7 @@ public class Field
     }
 
     [BsonId]
-    public ObjectId FieldId { get; private set; }
+    public Guid FieldId { get; private set; }
 
     public string VillageName { get; private set; }
     public double Area { get; private set; }
