@@ -1,31 +1,31 @@
 ﻿using FieldsManagement.Core.ValueObjects;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace FieldsManagement.Core.Entities;
-
-public class Operation
+namespace FieldsManagement.Core.Entities
 {
-    public Operation(ObjectId fieldId, string operationName, string description, DateTime date)
+    public class Operation
     {
-        ActionId = ObjectId.Create();
-        FieldId = fieldId;
-        OperationName = operationName;
-        Description = description;
-        Date = date;
-    }
+        [BsonId]
+        public Guid OperationId { get; set; }
+        public Guid FieldId { get; set; }
+        public OperationName OperationName { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
 
-    [BsonId]
-    public ObjectId ActionId { get; }
+        public Operation(Guid operationId, Guid fieldId, string operationName, string description, DateTime date)
+        {
+            OperationId = operationId;
+            FieldId = fieldId;
+            OperationName = operationName;
+            Description = description;
+            Date = date;
+        }
 
-    public ObjectId FieldId { get; private set; }
-    public OperationName OperationName { get; private set; }
-    public string Description { get; private set; }
-    public DateTime Date { get; private set; }
-
-    public void Update(string operationName, string description, DateTime date)
-    {
-        OperationName = operationName;
-        Description = description;
-        Date = date;
+        public void Update(string operationName, string description, DateTime date)
+        {
+            OperationName = operationName;
+            Description = description;
+            Date = date;
+        }
     }
 }

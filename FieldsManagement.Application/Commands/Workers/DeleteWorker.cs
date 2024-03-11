@@ -2,4 +2,4 @@
 
 namespace FieldsManagement.Application.Commands.Users;
 
-public record DeleteWorker(ObjectId Id) : INotification;
+public record DeleteWorker(Guid Id) : INotification;

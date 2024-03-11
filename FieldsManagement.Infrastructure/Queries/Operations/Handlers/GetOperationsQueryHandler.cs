@@ -5,9 +5,9 @@ using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries.Operations.Handlers;
 
-public class GetOperationsQueryHandler(IOperationRepository operationRepository) : IRequestHandler<GetOperationsQuery, IEnumerable<Operation>>
+public class GetOperationsQueryHandler(IOperationRepository operationRepository) : IRequestHandler<GetOperationsQuery, List<Operation>>
 {
-    public async Task<IEnumerable<Operation>> Handle(GetOperationsQuery request, CancellationToken cancellationToken)
+    public async Task<List<Operation>> Handle(GetOperationsQuery request, CancellationToken cancellationToken)
     {
         return await operationRepository.GetAll();
     }

@@ -10,24 +10,24 @@ public class OperationsRepository : IOperationRepository
 
     public OperationsRepository(IMongoDatabase mongoDatabase)
     {
-        _collection = mongoDatabase.GetCollection<Operation>("action");
+        _collection = mongoDatabase.GetCollection<Operation>("Operations");
     }
 
     public async Task Create(Operation operation)
         => await _collection.InsertOneAsync(operation);
 
     public async Task Update(Operation operation)
-        => await _collection.FindOneAndReplaceAsync(x => x.ActionId == operation.ActionId, operation);
+        => await _collection.FindOneAndReplaceAsync(x => x.OperationId == operation.OperationId, operation);
 
-    public async Task Delete(ObjectId actionId)
-        => await _collection.DeleteOneAsync(x => x.ActionId == actionId);
+    public async Task Delete(Guid operationId)
+        => await _collection.DeleteOneAsync(x => x.OperationId == operationId);
 
     public async Task<List<Operation>> GetAll()
         => await _collection.Find(x => true).ToListAsync();
 
-    public async Task<List<Operation>> GetAllByFieldId(ObjectId fieldId)
+    public async Task<List<Operation>> GetAllByFieldId(Guid fieldId)
         => await _collection.Find(x => x.FieldId == fieldId).ToListAsync();
 
-    public async Task<Operation> GetByOperationId(ObjectId actionId)
-    => await _collection.Find(x => x.ActionId == actionId).FirstOrDefaultAsync();
+    public async Task<Operation> GetByOperationId(Guid operationId)
+    => await _collection.Find(x => x.OperationId == operationId).FirstOrDefaultAsync();
 }

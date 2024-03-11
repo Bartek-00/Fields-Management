@@ -14,5 +14,5 @@ public interface IFieldsRepository
 
     Task<List<Field>> GetAll();
 
-    Task<Field> FindById(ObjectId id);
+    Task<Field> FindById(Guid id);
 }

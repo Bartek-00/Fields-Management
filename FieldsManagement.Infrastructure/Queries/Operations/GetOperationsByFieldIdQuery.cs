@@ -3,4 +3,4 @@ using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries.Operations;
 
-public record GetOperationsByFieldIdQuery(ObjectId FieldId) : IRequest<List<Operation>>;
+public record GetOperationsByFieldIdQuery(Guid FieldId) : IRequest<List<Operation>>;

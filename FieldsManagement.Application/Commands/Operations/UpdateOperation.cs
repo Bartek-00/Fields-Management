@@ -2,4 +2,4 @@
 
 namespace FieldsManagement.Application.Commands.Operations;
 
-public record UpdateOperation(ObjectId OperationId, ObjectId FieldId, string OperationName, string Description, DateTime Date) : INotification;
+public record UpdateOperation(Guid OperationId, Guid FieldId, string OperationName, string Description, DateTime Date) : INotification;

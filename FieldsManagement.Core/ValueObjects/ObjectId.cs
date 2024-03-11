@@ -1,9 +1,12 @@
-﻿using FieldsManagement.Core.Exceptions;
+﻿using System;
+using System.Text.Json.Serialization;
+using FieldsManagement.Core.Exceptions;
 
 public record ObjectId
 {
     public Guid Value { get; }
 
+    [JsonConstructor]
     public ObjectId(Guid value)
     {
         if (value == Guid.Empty)

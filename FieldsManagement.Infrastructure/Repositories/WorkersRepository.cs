@@ -17,10 +17,10 @@ public class WorkersRepository : IWorkerRespository
         => await _collection.InsertOneAsync(worker);
 
     public async Task Update(Worker worker)
-        => await _collection.ReplaceOneAsync(x => x.ObjectId == worker.ObjectId, worker);
+        => await _collection.ReplaceOneAsync(x => x.Id == worker.Id, worker);
 
-    public async Task Delete(ObjectId workerId)
-        => await _collection.DeleteOneAsync(x => x.ObjectId == workerId);
+    public async Task Delete(Guid workerId)
+        => await _collection.DeleteOneAsync(x => x.Id == workerId);
 
     public async Task<List<Worker>> GetAll()
         => await _collection.Find(x => true).ToListAsync();

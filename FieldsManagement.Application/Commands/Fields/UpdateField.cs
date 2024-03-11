@@ -2,4 +2,4 @@
 
 namespace FieldsManagement.Application.Commands;
 
-public record UpdateField(ObjectId Id, string AdditionalData) : INotification;
+public record UpdateField(Guid Id, string AdditionalData) : INotification;
