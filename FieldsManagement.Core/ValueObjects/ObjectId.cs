@@ -1,7 +1,6 @@
 ﻿using FieldsManagement.Core.Exceptions;
-using System;
 
-public sealed record ObjectId
+public record ObjectId
 {
     public Guid Value { get; }
 
@@ -12,6 +11,11 @@ public sealed record ObjectId
             throw new UncorrectGuidException();
         }
         Value = value;
+    }
+
+    public ObjectId(ObjectId objectId)
+    {
+        Value = objectId.Value;
     }
 
     public static ObjectId Create() => new(Guid.NewGuid());

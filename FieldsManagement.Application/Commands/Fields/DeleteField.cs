@@ -2,4 +2,4 @@
 
 namespace FieldsManagement.Application.Commands.Fields;
 
-public record DeleteFields(Guid Id) : INotification;
+public record DeleteField(Guid Id) : INotification;

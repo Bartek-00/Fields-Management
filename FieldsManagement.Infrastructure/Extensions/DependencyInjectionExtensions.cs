@@ -9,6 +9,9 @@ using FieldsManagement.Infrastructure.Queries.Fields;
 using FieldsManagement.Infrastructure.Queries.Workers;
 using FieldsManagement.Infrastructure.Queries.Fields.Handlers;
 using FieldsManagement.Infrastructure.Queries.Workers.Handlers;
+using FieldsManagement.Infrastructure.Queries.Operations;
+using FieldsManagement.Infrastructure.Queries.Handler;
+using FieldsManagement.Infrastructure.Queries.Operations.Handlers;
 
 namespace FieldsManagement.Infrastructure.Extensions
 {
@@ -22,10 +25,15 @@ namespace FieldsManagement.Infrastructure.Extensions
             services.AddMongoDb(configuration);
 
             services.AddTransient<IFieldsRepository, FieldsRepository>();
+            services.AddTransient<IWorkerRespository, WorkersRepository>();
+            services.AddTransient<IOperationRepository, OperationsRepository>();
 
             services.AddScoped<IRequestHandler<GetAllFieldsQuery, List<Field>>, GetAllFieldsQueryHandler>();
             services.AddScoped<IRequestHandler<GetAllWarkersQuery, List<Worker>>, GetAllWarkersQueryHandler>();
             services.AddScoped<IRequestHandler<GetFieldsByVillageQuery, List<Field>>, GetFieldsByVillageQueryHandler>();
+            services.AddScoped<IRequestHandler<GetOperationsByFieldIdQuery, List<Operation>>, GetOperationsByFieldIdQueryHandler>();
+            services.AddScoped<IRequestHandler<GetOperationsQuery, IEnumerable<Operation>>, GetOperationsQueryHandler>();
+
             return services;
         }
     }

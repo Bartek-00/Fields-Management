@@ -6,18 +6,18 @@ namespace FieldsManagement.Core.ValueObjects
     {
         public string Value { get; }
 
-        public WorkerSurname(string surname)
+        public WorkerSurname(string value)
         {
-            if (string.IsNullOrWhiteSpace(surname) || surname.Length > 100 || surname.Length < 3)
+            if (string.IsNullOrWhiteSpace(value) || value.Length > 100 || value.Length < 3)
             {
                 throw new InvalidNameException();
             }
 
-            Value = surname;
+            Value = value;
         }
 
-        public static implicit operator string(WorkerSurname surname)
-            => surname.Value;
+        public static implicit operator string(WorkerSurname value)
+            => value.Value;
 
         public static implicit operator WorkerSurname(string value)
             => new WorkerSurname(value);

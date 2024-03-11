@@ -12,14 +12,14 @@ namespace FieldsManagement.WebApi.Controllers;
 public class FieldsController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Add(CreateFields command)
+    public async Task<IActionResult> Add(CreateField command)
     {
         await mediator.Publish(command);
         return Created(nameof(Add), null);
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update(UpdateFields command)
+    public async Task<IActionResult> Update(UpdateField command)
     {
         await mediator.Publish(command);
         return Ok();
@@ -28,7 +28,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
-        var command = new DeleteFields(id);
+        var command = new DeleteField(id);
         await mediator.Publish(command);
         return NoContent();
     }

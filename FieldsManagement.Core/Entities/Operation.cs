@@ -1,4 +1,5 @@
 ﻿using FieldsManagement.Core.ValueObjects;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace FieldsManagement.Core.Entities;
 
@@ -13,7 +14,9 @@ public class Operation
         Date = date;
     }
 
+    [BsonId]
     public ObjectId ActionId { get; }
+
     public ObjectId FieldId { get; private set; }
     public OperationName OperationName { get; private set; }
     public string Description { get; private set; }

@@ -17,17 +17,11 @@ public class WorkerController(IMediator mediator) : ControllerBase
         return Created(nameof(Add), null);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(UpdateWorker command)
-    {
-        await mediator.Publish(command);
-        return Ok();
-    }
-
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete([FromRoute] Guid id)
+    public async Task<IActionResult> Delete([FromRoute] ObjectId id)
     {
-        var command = new DeleteWorker(id);
+        var objectId = new ObjectId(id);
+        var command = new DeleteWorker(objectId);
         await mediator.Publish(command);
         return NoContent();
     }
