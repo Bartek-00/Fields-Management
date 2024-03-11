@@ -1,12 +1,9 @@
-﻿using Amazon.Runtime.Internal;
-using FieldsManagement.Application.Commands;
+﻿using FieldsManagement.Application.Commands;
 using FieldsManagement.Application.Commands.Fields;
-using FieldsManagement.Core.Entities;
 using FieldsManagement.Infrastructure.Queries;
+using FieldsManagement.Infrastructure.Queries.Fields;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Driver;
-using System.Diagnostics;
 
 namespace FieldsManagement.WebApi.Controllers;
 
@@ -46,7 +43,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     [HttpGet("Village/{VillageName}")]
     public async Task<IActionResult> GetByVillage([FromRoute] string VillageName)
     {
-        var fields = await mediator.Send(new GetByVillageQuery(VillageName));
+        var fields = await mediator.Send(new GetFieldsByVillageQuery(VillageName));
         return Ok(fields);
     }
 }

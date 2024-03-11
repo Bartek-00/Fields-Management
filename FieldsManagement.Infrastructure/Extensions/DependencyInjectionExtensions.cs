@@ -2,11 +2,13 @@
 using FieldsManagement.Core.Repositories;
 using FieldsManagement.Infrastructure.InfrastructureModel;
 using FieldsManagement.Infrastructure.Queries.Handlers;
-using FieldsManagement.Infrastructure.Queries;
 using FieldsManagement.Infrastructure.Repositories;
 using MediatR;
 using MongoDB.Driver;
-using FieldsManagement.Infrastructure.Queries.Handler;
+using FieldsManagement.Infrastructure.Queries.Fields;
+using FieldsManagement.Infrastructure.Queries.Workers;
+using FieldsManagement.Infrastructure.Queries.Fields.Handlers;
+using FieldsManagement.Infrastructure.Queries.Workers.Handlers;
 
 namespace FieldsManagement.Infrastructure.Extensions
 {
@@ -23,7 +25,7 @@ namespace FieldsManagement.Infrastructure.Extensions
 
             services.AddScoped<IRequestHandler<GetAllFieldsQuery, List<Field>>, GetAllFieldsQueryHandler>();
             services.AddScoped<IRequestHandler<GetAllWarkersQuery, List<Worker>>, GetAllWarkersQueryHandler>();
-            services.AddScoped<IRequestHandler<GetByVillageQuery, List<Field>>, GetByVillageQueryHandler>();
+            services.AddScoped<IRequestHandler<GetFieldsByVillageQuery, List<Field>>, GetFieldsByVillageQueryHandler>();
             return services;
         }
     }

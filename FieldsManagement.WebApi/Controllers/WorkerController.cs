@@ -1,5 +1,6 @@
 ﻿using FieldsManagement.Application.Commands.Users;
 using FieldsManagement.Infrastructure.Queries;
+using FieldsManagement.Infrastructure.Queries.Workers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

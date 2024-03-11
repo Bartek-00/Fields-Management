@@ -1,5 +1,6 @@
 ﻿using FieldsManagement.Core.Entities;
 using FieldsManagement.Core.Repositories;
+using FieldsManagement.Infrastructure.Queries.Fields;
 using MediatR;
 
 namespace FieldsManagement.Infrastructure.Queries.Handlers;

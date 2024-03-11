@@ -4,11 +4,11 @@ using FieldsManagement.Core.Repositories;
 
 namespace FieldsManagement.Infrastructure.Repositories;
 
-public class WorkerRepository : IWorkerRespository
+public class WorkersRepository : IWorkerRespository
 {
     private readonly IMongoCollection<Worker> _collection;
 
-    public WorkerRepository(IMongoDatabase mongoDatabase)
+    public WorkersRepository(IMongoDatabase mongoDatabase)
     {
         _collection = mongoDatabase.GetCollection<Worker>("Workers");
     }

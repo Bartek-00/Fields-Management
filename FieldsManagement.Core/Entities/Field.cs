@@ -14,5 +14,4 @@ public class Field
     public string VillageName { get; private set; }
     public double Area { get; private set; }
     public string AdditionalData { get; private set; }
-    private List<Action> Actions { get; set; }
 }
