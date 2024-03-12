@@ -33,7 +33,7 @@ public class FieldsManagementWebAplicationFactory : WebApplicationFactory<Progra
             configuration.AddInMemoryCollection(new Dictionary<string, string?>()
             {
                 { "ConnectionStrings:MongoDb", connectionString },
-                { "MongoDb:DatabaseName", "corerock_tests" }
+                { "MongoDb:DatabaseName", "tests" }
             });
         });
     }

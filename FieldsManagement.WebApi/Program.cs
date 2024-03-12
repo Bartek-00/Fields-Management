@@ -13,6 +13,7 @@ using FieldsManagement.Application.Commands.Operations.Handlers;
 using FieldsManagement.Application.Commands.Users.Handlers;
 using FieldsManagement.Application.Commands.Users;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
