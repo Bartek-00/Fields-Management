@@ -1,6 +1,8 @@
-﻿using FieldsManagement.Core.Entities;
+﻿using FieldsManagement.Application.Commands;
+using FieldsManagement.Core.Entities;
 using FieldsManagment.IntegrationTests;
 using FluentAssertions;
+using System.Net;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
 
@@ -28,8 +30,42 @@ public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
             additionalData: ""
             );
 
+        var field2 = new Field(
+            fieldId: Guid.NewGuid(),
+            villageName: "znin",
+            area: 30,
+            additionalData: ""
+            );
+
+        //create
         var response = await client.PostAsJsonAsync("/Fields", field);
-        var getReservation = await client.GetFromJsonAsync<List<Field>>("/Fields");
-        getReservation!.Count.Should().Be(1);
+        response.StatusCode.Should().Be(HttpStatusCode.Created);
+        var getField = await client.GetFromJsonAsync<List<Field>>("/Fields");
+
+        //update
+        var UpdatedField = new UpdateField(
+                       Id: getField![0].FieldId,
+                       AdditionalData: "updated"
+                        );
+        var update = await client.PutAsJsonAsync("/Fields", UpdatedField);
+        update.StatusCode.Should().Be(HttpStatusCode.OK);
+
+        var getFields3 = await client.GetFromJsonAsync<List<Field>>("/Fields");
+        getFields3![0].AdditionalData.Should().Be("updated");
+
+        //delete
+        var delete = await client.DeleteAsync($"/Fields/{getField![0].FieldId}");
+        delete.StatusCode.Should().Be(HttpStatusCode.NoContent);
+
+        //get
+        await client.PostAsJsonAsync("/Fields", field);
+        await client.PostAsJsonAsync("/Fields", field);
+        await client.PostAsJsonAsync("/Fields", field);
+        await client.PostAsJsonAsync("/Fields", field2);
+
+        var getFields2 = await client.GetFromJsonAsync<List<Field>>("/Fields");
+        var response2 = await client.GetFromJsonAsync<List<Field>>("/Fields/Village/makapaka");
+        getFields2!.Count.Should().Be(4);
+        response2!.Count.Should().Be(3);
     }
 }
