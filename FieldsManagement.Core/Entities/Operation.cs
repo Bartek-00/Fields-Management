@@ -7,8 +7,9 @@ namespace FieldsManagement.Core.Entities
     {
         [BsonId]
         public Guid OperationId { get; set; }
+
         public Guid FieldId { get; set; }
-        public OperationName OperationName { get; set; }
+        public string OperationName { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
 
