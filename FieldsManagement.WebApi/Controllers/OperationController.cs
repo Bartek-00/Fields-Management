@@ -8,7 +8,7 @@ namespace FieldsManagement.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class OperationController(IMediator mediator) : ControllerBase
+public class OperationsController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
     public async Task<ActionResult<Operation>> AddOperation(CreateOperation command)
