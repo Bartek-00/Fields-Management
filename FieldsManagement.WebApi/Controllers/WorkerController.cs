@@ -20,7 +20,6 @@ public class WorkerController(IMediator mediator) : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
-        //var objectId = new ObjectId(id);
         var command = new DeleteWorker(id);
         await mediator.Publish(command);
         return NoContent();

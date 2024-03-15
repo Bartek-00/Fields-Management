@@ -8,6 +8,6 @@ public class CreateWorkerHandler(IWorkerRespository workerRespository) : INotifi
 {
     public async Task Handle(CreateWorker notification, CancellationToken cancellationToken)
     {
-        await workerRespository.Create(new Worker(notification.objectId, notification.workerName, notification.workerSurname, notification.additionalData));
+        await workerRespository.Create(new Worker(notification.WorkerId, notification.workerName, notification.workerSurname, notification.additionalData));
     }
 }
