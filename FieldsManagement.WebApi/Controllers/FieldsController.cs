@@ -46,4 +46,11 @@ public class FieldsController(IMediator mediator) : ControllerBase
         var fields = await mediator.Send(new GetFieldsByVillageQuery(VillageName));
         return Ok(fields);
     }
+
+    [HttpGet("action")]
+    public async Task<IActionResult> GetByAction()
+    {
+        var fields = await mediator.Send(new GetAllFieldsWithOperationQuery());
+        return Ok(fields);
+    }
 }

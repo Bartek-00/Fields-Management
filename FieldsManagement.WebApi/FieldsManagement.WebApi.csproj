@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FieldsManagement.Application\FieldsManagement.Application.csproj" />
-    <ProjectReference Include="..\FieldsManagement.Core\FieldsManagement.Core.csproj" />
     <ProjectReference Include="..\FieldsManagement.Infrastructure\FieldsManagement.Infrastructure.csproj" />
   </ItemGroup>
 

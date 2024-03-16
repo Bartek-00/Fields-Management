@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FieldsManagement.Core\FieldsManagement.Core.csproj" />
+    <ProjectReference Include="..\FieldsManagement.Application\FieldsManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>

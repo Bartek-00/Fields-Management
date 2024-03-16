@@ -11,6 +11,7 @@ using FieldsManagement.Infrastructure.Queries.Workers.Handlers;
 using FieldsManagement.Infrastructure.Queries.Operations;
 using FieldsManagement.Infrastructure.Queries.Handler;
 using FieldsManagement.Infrastructure.Queries.Operations.Handlers;
+using FieldsManagement.Application.DTO;
 
 namespace FieldsManagement.Infrastructure.Extensions
 {
@@ -32,6 +33,7 @@ namespace FieldsManagement.Infrastructure.Extensions
             services.AddScoped<IRequestHandler<GetFieldsByVillageQuery, List<Field>>, GetFieldsByVillageQueryHandler>();
             services.AddScoped<IRequestHandler<GetOperationsByFieldIdQuery, List<Operation>>, GetOperationsByFieldIdQueryHandler>();
             services.AddScoped<IRequestHandler<GetOperationsQuery, List<Operation>>, GetOperationsQueryHandler>();
+            services.AddScoped<IRequestHandler<GetAllFieldsWithOperationQuery, IEnumerable<FieldDTO>>, GetAllFieldsWithOperationHandler>();
 
             return services;
         }
