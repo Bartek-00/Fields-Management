@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FieldsManagement.Core\FieldsManagement.Core.csproj" />
-    <ProjectReference Include="..\FieldsManagement.Infrastructure\FieldsManagement.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
