@@ -31,7 +31,6 @@ const App: React.FC = () => {
         <div key={field.id}>
           <h3>{field.villageName}</h3>
           <p>{field.area}</p>
-          <p>{field.additionalData}</p>
         </div>
 ))}
 
