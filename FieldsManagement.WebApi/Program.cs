@@ -35,7 +35,15 @@ builder.Services.AddScoped<INotificationHandler<DeleteOperation>, DeleteOperatio
 builder.Services.AddScoped<INotificationHandler<CreateWorker>, CreateWorkerHandler>();
 builder.Services.AddScoped<INotificationHandler<DeleteWorker>, DeleteWorkerHandler>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowOrigin",
+        builder => builder.WithOrigins("http://localhost:3000"));
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowOrigin");
 
 app.UseSwagger(c => { c.RouteTemplate = "/swagger/{documentName}/swagger.json"; });
 app.UseSwaggerUI(o =>
