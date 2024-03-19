@@ -1,19 +1,12 @@
 using FieldsManagement.Application.Commands;
-using FieldsManagement.Core.Entities;
-using FieldsManagement.Infrastructure.Extensions;
-using FieldsManagement.Infrastructure.Queries.Handlers;
-using FieldsManagement.Infrastructure.Queries;
-using MediatR;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using FieldsManagement.Application.Commands.Fields.Handlers;
 using FieldsManagement.Application.Commands.Fields;
+using FieldsManagement.Application.Commands.Fields.Handlers;
 using FieldsManagement.Application.Commands.Operations;
 using FieldsManagement.Application.Commands.Operations.Handlers;
-using FieldsManagement.Application.Commands.Users.Handlers;
 using FieldsManagement.Application.Commands.Users;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
-using MongoDB.Driver;
+using FieldsManagement.Application.Commands.Users.Handlers;
+using FieldsManagement.Infrastructure.Extensions;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
