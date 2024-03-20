@@ -8,7 +8,6 @@ public class GetOperationsQueryHandler(IOperationRepository operationRepository)
 {
     public async Task<List<Operation>> Handle(GetOperationsQuery request, CancellationToken cancellationToken)
     {
-        var a = await operationRepository.GetAll();
         return await operationRepository.GetAll();
     }
 }

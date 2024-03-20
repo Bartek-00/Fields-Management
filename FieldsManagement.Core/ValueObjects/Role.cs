@@ -1,11 +1,10 @@
-using MySpot.Core.Exceptions;
+using FieldsManagement.Core.Exceptions;
 
-namespace MySpot.Core.ValueObjects;
+namespace FieldsManagement.Core.ValueObjects;
 
 public sealed record Role
 {
-
-    public static IEnumerable<string> AvailableRoles { get; } = new[] {"admin", "user"};
+    public static IEnumerable<string> AvailableRoles { get; } = new[] { "admin", "user" };
 
     public string Value { get; }
 
@@ -13,19 +12,19 @@ public sealed record Role
     {
         if (string.IsNullOrWhiteSpace(value) || value.Length > 30)
         {
-            throw new InvalidRoleException(value);
+            throw new InvalidNameException();
         }
 
         if (!AvailableRoles.Contains(value))
         {
-            throw new InvalidRoleException(value);
+            throw new InvalidNameException();
         }
 
         Value = value;
     }
 
     public static Role Admin() => new("admin");
-    
+
     public static Role User() => new("user");
 
     public static implicit operator Role(string value) => new Role(value);

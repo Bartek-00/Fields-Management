@@ -1,6 +1,6 @@
-using MySpot.Core.Exceptions;
+using FieldsManagement.Core.Exceptions;
 
-namespace MySpot.Core.ValueObjects;
+namespace FieldsManagement.Core.ValueObjects;
 
 public sealed record UserId
 {
@@ -10,13 +10,13 @@ public sealed record UserId
     {
         if (value == Guid.Empty)
         {
-            throw new InvalidEntityIdException(value);
+            throw new InvalidEntityIdException();
         }
 
         Value = value;
     }
 
     public static implicit operator Guid(UserId date) => date.Value;
-    
+
     public static implicit operator UserId(Guid value) => new(value);
 }

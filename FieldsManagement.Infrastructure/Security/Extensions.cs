@@ -1,9 +1,8 @@
+using FieldsManagement.Core.Entities;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
 using MySpot.Application.Security;
-using MySpot.Core.Entities;
 
-namespace MySpot.Infrastructure.Security;
+namespace FieldsManagement.Infrastructure.Security;
 
 internal static class Extensions
 {

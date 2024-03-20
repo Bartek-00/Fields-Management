@@ -1,6 +1,8 @@
 using FieldsManagement.Application.Commands;
 using FieldsManagement.Application.Commands.Fields;
 using FieldsManagement.Application.Commands.Fields.Handlers;
+using FieldsManagement.Application.Commands.Login;
+using FieldsManagement.Application.Commands.Login.Handler;
 using FieldsManagement.Application.Commands.Operations;
 using FieldsManagement.Application.Commands.Operations.Handlers;
 using FieldsManagement.Application.Commands.Users;
@@ -27,6 +29,8 @@ builder.Services.AddScoped<INotificationHandler<CreateOperation>, CreateOperatio
 builder.Services.AddScoped<INotificationHandler<DeleteOperation>, DeleteOperationHandler>();
 builder.Services.AddScoped<INotificationHandler<CreateWorker>, CreateWorkerHandler>();
 builder.Services.AddScoped<INotificationHandler<DeleteWorker>, DeleteWorkerHandler>();
+builder.Services.AddScoped<INotificationHandler<SignIn>, SignInHandler>();
+builder.Services.AddScoped<INotificationHandler<SignUp>, SignUpHandler>();
 
 builder.Services.AddCors(options =>
 {

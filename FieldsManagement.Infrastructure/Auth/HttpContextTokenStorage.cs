@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Http;
-using MySpot.Application.DTO;
+using FieldsManagement.Application.DTO;
+using FieldsManagement.Application.Security;
 using MySpot.Application.Security;
 
-namespace MySpot.Infrastructure.Auth;
+namespace FieldsManagement.Infrastructure.Auth;
 
 internal sealed class HttpContextTokenStorage : ITokenStorage
 {
