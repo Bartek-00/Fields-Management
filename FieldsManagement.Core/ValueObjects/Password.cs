@@ -1,18 +1,18 @@
-using MySpot.Core.Exceptions;
+using FieldsManagement.Core.Exceptions;
 
-namespace MySpot.Core.ValueObjects;
+namespace FieldsManagement.Core.ValueObjects;
 
 public sealed record Password
 {
     public string Value { get; }
-        
+
     public Password(string value)
     {
         if (string.IsNullOrWhiteSpace(value) || value.Length is > 200 or < 6)
         {
             throw new InvalidPasswordException();
         }
-            
+
         Value = value;
     }
 

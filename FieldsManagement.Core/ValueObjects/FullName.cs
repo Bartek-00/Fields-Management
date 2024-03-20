@@ -1,18 +1,18 @@
-﻿using MySpot.Core.Exceptions;
+﻿using FieldsManagement.Core.Exceptions;
 
-namespace MySpot.Core.ValueObjects;
+namespace FieldsManagement.Core.ValueObjects;
 
 public sealed record FullName
 {
     public string Value { get; }
-        
+
     public FullName(string value)
     {
         if (string.IsNullOrWhiteSpace(value) || value.Length is > 100 or < 3)
         {
-            throw new InvalidFullNameException(value);
+            throw new InvalidNameException();
         }
-            
+
         Value = value;
     }
 

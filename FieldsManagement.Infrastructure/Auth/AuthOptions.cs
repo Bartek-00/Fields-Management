@@ -1,4 +1,4 @@
-namespace MySpot.Infrastructure.Auth;
+namespace FieldsManagement.Infrastructure.Auth;
 
 public sealed class AuthOptions
 {

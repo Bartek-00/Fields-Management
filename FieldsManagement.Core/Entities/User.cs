@@ -1,4 +1,4 @@
-using MySpot.Core.ValueObjects;
+using FieldsManagement.Core.ValueObjects;
 
 namespace FieldsManagement.Core.Entities;
 

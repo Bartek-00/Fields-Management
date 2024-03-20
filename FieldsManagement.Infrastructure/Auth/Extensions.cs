@@ -1,22 +1,25 @@
-using System.Text;
+﻿using FieldsManagement.Application.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using MySpot.Application.Security;
+using System.Text;
 
-namespace MySpot.Infrastructure.Auth;
+namespace FieldsManagement.Infrastructure.Auth;
 
 internal static class Extensions
 {
     private const string OptionsSectionName = "auth";
-    
+
     public static IServiceCollection AddAuth(this IServiceCollection services, IConfiguration configuration)
     {
-        var options = configuration.GetOptions<AuthOptions>(OptionsSectionName);
+        var authOptions = configuration.GetSection("Auth").Get<AuthOptions>();
+
+        if (authOptions == null)
+        {
+            throw new InvalidOperationException("AuthOptions is null. Check your configuration.");
+        }
 
         services
-            .Configure<AuthOptions>(configuration.GetRequiredSection(OptionsSectionName))
+            .Configure<AuthOptions>(configuration.GetSection("Auth"))
             .AddSingleton<IAuthenticator, Authenticator>()
             .AddSingleton<ITokenStorage, HttpContextTokenStorage>()
             .AddAuthentication(o =>
@@ -26,14 +29,21 @@ internal static class Extensions
             })
             .AddJwtBearer(o =>
             {
-                o.Audience = options.Audience;
-                o.IncludeErrorDetails = true;
-                o.TokenValidationParameters = new TokenValidationParameters
+                if (authOptions.Audience != null && authOptions.Issuer != null && authOptions.SigningKey != null)
                 {
-                    ValidIssuer = options.Issuer,
-                    ClockSkew = TimeSpan.Zero,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SigningKey))
-                };
+                    o.Audience = authOptions.Audience;
+                    o.IncludeErrorDetails = true;
+                    o.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidIssuer = authOptions.Issuer,
+                        ClockSkew = TimeSpan.Zero,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authOptions.SigningKey))
+                    };
+                }
+                else
+                {
+                    throw new InvalidOperationException("One or more AuthOptions properties are null.");
+                }
             });
 
         services.AddAuthorization(authorization =>

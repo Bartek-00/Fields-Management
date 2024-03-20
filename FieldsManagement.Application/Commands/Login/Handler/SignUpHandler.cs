@@ -1,28 +1,15 @@
 using FieldsManagement.Application.Commands.Login;
+using FieldsManagement.Core.Abstractions;
+using FieldsManagement.Core.Entities;
+using FieldsManagement.Core.ValueObjects;
 using MediatR;
-using MySpot.Application.Abstractions;
-using MySpot.Application.Exceptions;
 using MySpot.Application.Security;
-using MySpot.Core.Abstractions;
-using MySpot.Core.Entities;
 using MySpot.Core.Repositories;
-using MySpot.Core.ValueObjects;
 
-namespace MySpot.Application.Commands.Handlers;
+namespace FieldsManagement.Application.Commands.Login.Handler;
 
-internal sealed class SignUpHandler : INotificationHandler<SignUp>
+public sealed class SignUpHandler(IUsersRepository userRepository, IPasswordManager passwordManager, IClock clock) : INotificationHandler<SignUp>
 {
-    private readonly IUserRepository _userRepository;
-    private readonly IPasswordManager _passwordManager;
-    private readonly IClock _clock;
-
-    public SignUpHandler(IUserRepository userRepository, IPasswordManager passwordManager, IClock clock)
-    {
-        _userRepository = userRepository;
-        _passwordManager = passwordManager;
-        _clock = clock;
-    }
-
     public async Task Handle(SignUp notification, CancellationToken cancellationToken)
     {
         var userId = new UserId(notification.UserId);
@@ -32,18 +19,18 @@ internal sealed class SignUpHandler : INotificationHandler<SignUp>
         var fullName = new FullName(notification.FullName);
         var role = string.IsNullOrWhiteSpace(notification.Role) ? Role.User() : new Role(notification.Role);
 
-        if (await _userRepository.GetByEmailAsync(email) is not null)
+        if (await userRepository.GetByEmailAsync(email) is not null)
         {
             throw new Exception(email);
         }
 
-        if (await _userRepository.GetByUsernameAsync(username) is not null)
+        if (await userRepository.GetByUsernameAsync(username) is not null)
         {
             throw new Exception(username);
         }
 
-        var securedPassword = _passwordManager.Secure(password);
-        var user = new User(userId, email, username, securedPassword, fullName, role, _clock.Current());
-        await _userRepository.AddAsync(user);
+        var securedPassword = passwordManager.Secure(password);
+        var user = new User(userId, email, username, securedPassword, fullName, role, clock.Current());
+        await userRepository.AddAsync(user);
     }
 }

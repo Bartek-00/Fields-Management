@@ -1,9 +1,10 @@
-using MySpot.Application.DTO;
+using FieldsManagement.Application.DTO;
 
-namespace MySpot.Application.Security;
+namespace FieldsManagement.Application.Security;
 
 public interface ITokenStorage
 {
     void Set(JwtDto jwt);
+
     JwtDto Get();
 }

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using FieldsManagement.Core.Exceptions;
 using System.Text.Json.Serialization;
-using FieldsManagement.Core.Exceptions;
 
 public record ObjectId
 {
