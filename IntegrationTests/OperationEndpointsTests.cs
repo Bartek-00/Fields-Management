@@ -44,18 +44,21 @@ public class OperationEndpointsTests : IClassFixture<FieldsManagementWebAplicati
 
         var operation = new CreateOperation(
                        FieldId: getField![0].FieldId,
+                       PlantName: "wheat",
                        OperationName: "sowing",
                        Description: "sowing seeds",
                        Date: DateTime.Now
                        );
         var operation1 = new CreateOperation(
                        FieldId: getField![0].FieldId,
+                       PlantName: "corn",
                        OperationName: "plant",
                        Description: "planting",
                        Date: DateTime.Now
                        );
         var operation2 = new CreateOperation(
                        FieldId: getField![1].FieldId,
+                       PlantName: "corn",
                        OperationName: "seed",
                        Description: "",
                        Date: DateTime.Now
@@ -76,6 +79,7 @@ public class OperationEndpointsTests : IClassFixture<FieldsManagementWebAplicati
         var UpdatedOperation = new UpdateOperation(
                                   OperationId: getOperation![0].OperationId,
                                   FieldId: getField![0].FieldId,
+                                  PlantName: "wheat",
                                   OperationName: "harvest",
                                   Description: "harvesting",
                                   Date: DateTime.Now
