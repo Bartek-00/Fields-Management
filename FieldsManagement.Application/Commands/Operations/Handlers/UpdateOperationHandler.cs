@@ -14,7 +14,7 @@ public class UpdateOperationHandler(IOperationRepository operationRepository) : 
             throw new ApplicationException("Operation not found");
         }
 
-        operation.Update(notification.OperationName, notification.Description, notification.Date);
+        operation.Update(notification.OperationName, notification.PlantName, notification.Description, notification.Date);
 
         await operationRepository.Update(operation);
     }
