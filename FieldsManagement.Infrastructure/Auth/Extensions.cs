@@ -13,11 +13,6 @@ internal static class Extensions
     {
         var authOptions = configuration.GetSection("Auth").Get<AuthOptions>();
 
-        if (authOptions == null)
-        {
-            throw new InvalidOperationException("AuthOptions is null. Check your configuration.");
-        }
-
         services
             .Configure<AuthOptions>(configuration.GetSection("Auth"))
             .AddSingleton<IAuthenticator, Authenticator>()

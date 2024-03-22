@@ -25,8 +25,6 @@ public class UsersController(IMediator mediator, ITokenStorage tokenStorage) : C
     }
 
     [Authorize]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [HttpGet("me")]
     public async Task<ActionResult<User>> Get()
     {
