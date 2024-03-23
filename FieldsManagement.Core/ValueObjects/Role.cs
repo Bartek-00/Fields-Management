@@ -4,7 +4,7 @@ namespace FieldsManagement.Core.ValueObjects;
 
 public sealed record Role
 {
-    public static IEnumerable<string> AvailableRoles { get; } = new[] { "admin", "user" };
+    public static IEnumerable<string> AvailableRoles { get; } = new[] { "admin", "user", "is-admin" };
 
     public string Value { get; }
 
@@ -17,7 +17,7 @@ public sealed record Role
 
         if (!AvailableRoles.Contains(value))
         {
-            throw new InvalidNameException();
+            throw new InvalidRoleException(value);
         }
 
         Value = value;
