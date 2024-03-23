@@ -2,6 +2,7 @@
 using FieldsManagement.Core.Entities;
 using FieldsManagement.Infrastructure.Queries.Operations;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FieldsManagement.WebApi.Controllers;
@@ -11,6 +12,7 @@ namespace FieldsManagement.WebApi.Controllers;
 public class OperationsController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<Operation>> AddOperation(CreateOperation command)
     {
         await mediator.Publish(command);
@@ -18,6 +20,7 @@ public class OperationsController(IMediator mediator) : ControllerBase
     }
 
     [HttpPut]
+    [Authorize]
     public async Task<ActionResult> UpdateOperation(UpdateOperation command)
     {
         await mediator.Publish(command);
@@ -25,6 +28,7 @@ public class OperationsController(IMediator mediator) : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<ActionResult> DeleteOperation(Guid id)
     {
         var command = new DeleteOperation(id);
@@ -33,6 +37,7 @@ public class OperationsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<List<Operation>>> GetOperations()
     {
         var operations = await mediator.Send(new GetOperationsQuery());
@@ -40,6 +45,7 @@ public class OperationsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet("{fieldId}")]
+    [Authorize]
     public async Task<ActionResult<List<Operation>>> GetOperationsByFieldId(Guid fieldId)
     {
         var operations = await mediator.Send(new GetOperationsByFieldIdQuery(fieldId));

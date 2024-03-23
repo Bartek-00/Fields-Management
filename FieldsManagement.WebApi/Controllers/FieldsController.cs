@@ -3,6 +3,7 @@ using FieldsManagement.Application.Commands.Fields;
 using FieldsManagement.Infrastructure.Queries;
 using FieldsManagement.Infrastructure.Queries.Fields;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FieldsManagement.WebApi.Controllers;
@@ -12,6 +13,7 @@ namespace FieldsManagement.WebApi.Controllers;
 public class FieldsController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
+    [Authorize(Policy = "is-admin")]
     public async Task<IActionResult> Add(CreateField command)
     {
         await mediator.Publish(command);
@@ -19,6 +21,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Policy = "is-admin")]
     public async Task<IActionResult> Update(UpdateField command)
     {
         await mediator.Publish(command);
@@ -26,6 +29,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Policy = "is-admin")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
         var command = new DeleteField(id);
@@ -34,6 +38,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAll()
     {
         var fields = await mediator.Send(new GetAllFieldsQuery());
@@ -41,6 +46,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet("Village/{VillageName}")]
+    [Authorize]
     public async Task<IActionResult> GetByVillage([FromRoute] string VillageName)
     {
         var fields = await mediator.Send(new GetFieldsByVillageQuery(VillageName));
@@ -48,6 +54,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet("action")]
+    [Authorize]
     public async Task<IActionResult> GetByAction()
     {
         var fields = await mediator.Send(new GetAllFieldsWithOperationQuery());
