@@ -1,7 +1,10 @@
 ﻿using FieldsManagement.Application.Commands;
+using FieldsManagement.Application.Commands.Login;
+using FieldsManagement.Application.DTO;
 using FieldsManagement.Core.Entities;
 using FieldsManagment.IntegrationTests;
 using FluentAssertions;
+using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
@@ -21,7 +24,31 @@ public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
     [Fact]
     public async Task CRUDTests()
     {
+        var signUp = new SignUp(
+            Email: "bartek@gmail.com",
+            Username: "bartek",
+            Password: "bartek",
+            FullName: "bartek",
+            Role: "admin"
+            );
+        var signIn = new SignIn(
+                       Email: "bartek@gmail.com",
+                       Password: "bartek"
+                       );
         var client = _webAppFactory.CreateClient();
+        var up = await client.PostAsJsonAsync("/Users", signUp);
+        var signInPost = await client.PostAsJsonAsync("/Users/sign-in", signIn);
+
+        if (signInPost.IsSuccessStatusCode)
+        {
+            // Odczytaj zawartość odpowiedzi
+            var responseContent = await signInPost.Content.ReadAsStringAsync();
+
+            // Przeprowadź deserializację JSON, aby uzyskać obiekt zawierający token
+            var jwtDto = JsonConvert.DeserializeObject<JwtDto>(responseContent);
+
+            var i = 1;
+        }
 
         var field = new Field(
             fieldId: Guid.NewGuid(),

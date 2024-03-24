@@ -1,6 +1,7 @@
 using FieldsManagement.Application.DTO;
 using FieldsManagement.Application.Security;
 using FieldsManagement.Core.Abstractions;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace FieldsManagement.Infrastructure.Auth;
 
-internal sealed class Authenticator : IAuthenticator
+public sealed class Authenticator : IAuthenticator
 {
     private readonly IClock _clock;
     private readonly string _issuer;
