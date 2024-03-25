@@ -1,7 +1,6 @@
 using FieldsManagement.Application.DTO;
 using FieldsManagement.Application.Security;
 using FieldsManagement.Core.Abstractions;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
