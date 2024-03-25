@@ -1,9 +1,6 @@
-﻿using FieldsManagement.Infrastructure.Auth;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Testcontainers.MongoDb;
 using Xunit.Abstractions;
@@ -38,10 +35,6 @@ public class FieldsManagementWebAplicationFactory : WebApplicationFactory<Progra
                 { "MongoDb:DatabaseName", "tests" }
             });
         });
-        builder.ConfigureServices(services =>
-        {
-            services.MockAuthorization();
-        });
     }
 
     async Task IAsyncLifetime.InitializeAsync()
@@ -53,23 +46,5 @@ public class FieldsManagementWebAplicationFactory : WebApplicationFactory<Progra
     {
         await _conteiner.StopAsync();
         await _conteiner.DisposeAsync();
-    }
-}
-
-public static class ServiceExtension
-{
-    public static IServiceCollection MockAuthorization(this IServiceCollection services)
-    {
-        services.Configure<AuthOptions>(delegate
-        {
-        });
-        services.AddAuthentication(ConfigureTestAuthentication).AddScheme<AuthOptions, Authenticator>("Test", null);
-        return services;
-    }
-
-    private static void ConfigureTestAuthentication(AuthenticationOptions authenticationOptions)
-    {
-        authenticationOptions.DefaultAuthenticateScheme = "Test";
-        authenticationOptions.DefaultChallengeScheme = "Test";
     }
 }
