@@ -1,8 +1,9 @@
 ﻿using FieldsManagement.Application.Security;
+using IntegrationTests.Factory;
 using Moq;
 using System.Net.Http.Headers;
 
-namespace FieldsManagment.IntegrationTests
+namespace FieldsManagement.IntegrationTests
 {
     public class AuthenticationTests : IClassFixture<FieldsManagementWebAplicationFactory>
     {
@@ -25,8 +26,6 @@ namespace FieldsManagment.IntegrationTests
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var response = await client.GetAsync("/api/fields");
-
-            // Your assertions based on the response
         }
     }
 }

@@ -16,7 +16,8 @@ public sealed class SignInHandler(IUsersRepository userRepository, IAuthenticato
         {
             throw new Exception();
         }
-
+        var password = passwordManager.Secure(command.Password);
+        var o = user.Password;
         if (!passwordManager.Validate(command.Password, user.Password))
         {
             throw new Exception();

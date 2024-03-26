@@ -1,12 +1,12 @@
 ﻿using FieldsManagement.Application.Commands.Operations;
 using FieldsManagement.Core.Entities;
-using FieldsManagment.IntegrationTests;
 using FluentAssertions;
+using IntegrationTests.Factory;
 using System.Net;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
 
-namespace IntegrationTests;
+namespace IntegrationTests.ControllerTests;
 
 public class OperationEndpointsTests : IClassFixture<FieldsManagementWebAplicationFactory>
 {
