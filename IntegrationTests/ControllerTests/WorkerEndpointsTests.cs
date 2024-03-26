@@ -1,7 +1,7 @@
 ﻿using FieldsManagement.Application.Commands.Users;
 using FieldsManagement.Core.Entities;
-using FieldsManagment.IntegrationTests;
 using FluentAssertions;
+using IntegrationTests.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
 
-namespace IntegrationTests;
+namespace IntegrationTests.ControllerTests;
 
 public class WorkerEndpointsTests : IClassFixture<FieldsManagementWebAplicationFactory>
 {

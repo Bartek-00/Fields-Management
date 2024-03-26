@@ -2,14 +2,14 @@
 using FieldsManagement.Application.Commands.Login;
 using FieldsManagement.Application.DTO;
 using FieldsManagement.Core.Entities;
-using FieldsManagment.IntegrationTests;
 using FluentAssertions;
+using IntegrationTests.Factory;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
 
-namespace FieldsManagement.IntegrationTests;
+namespace IntegrationTests.ControllerTests;
 
 public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationFactory>
 {
