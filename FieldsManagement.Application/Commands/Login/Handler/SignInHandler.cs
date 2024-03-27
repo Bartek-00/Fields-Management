@@ -1,4 +1,3 @@
-using FieldsManagement.Application.Commands.Login;
 using FieldsManagement.Application.Security;
 using MediatR;
 using MySpot.Application.Security;

@@ -1,10 +1,11 @@
 ﻿using FieldsManagement.Application.Commands;
-using FieldsManagement.Application.Commands.Login;
-using FieldsManagement.Application.DTO;
+using FieldsManagement.Application.Security;
 using FieldsManagement.Core.Entities;
+using FieldsManagement.Core.ValueObjects;
 using FluentAssertions;
 using IntegrationTests.Factory;
-using Newtonsoft.Json;
+using IntegrationTests.Helpers;
+using Microsoft.Extensions.DependencyInjection;
 using System.Net;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
@@ -14,17 +15,19 @@ namespace IntegrationTests.ControllerTests;
 public class FieldsEndpointsTests : IClassFixture<FieldsManagementWebAplicationFactory>
 {
     private readonly FieldsManagementWebAplicationFactory _webAppFactory;
+    private readonly IAuthenticator _authenticator;
 
     public FieldsEndpointsTests(FieldsManagementWebAplicationFactory webAppFactory, ITestOutputHelper testOutputHelper)
     {
         _webAppFactory = webAppFactory;
         _webAppFactory.Output = testOutputHelper;
+        _authenticator = webAppFactory.Services.GetRequiredService<IAuthenticator>();
     }
 
     [Fact]
     public async Task CRUDTests()
     {
-        var client = _webAppFactory.CreateClient();
+        var client = AuthHelper.Authorize(_webAppFactory, Guid.NewGuid(), Role.Admin().Value);
 
         var field = new Field(
             fieldId: Guid.NewGuid(),

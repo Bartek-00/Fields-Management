@@ -21,11 +21,11 @@ namespace IntegrationTests.Factory
         {
             base.ConfigureWebHost(builder);
 
-            builder.ConfigureServices(services =>
-            {
-                services.AddSingleton<IAuthenticator, Authenticator>();
-                services.AddSingleton<IPasswordManager, PasswordManager>();
-            });
+            //builder.ConfigureServices(services =>
+            //{
+            //    services.AddSingleton<IAuthenticator, Authenticator>();
+            //    services.AddSingleton<IPasswordManager, PasswordManager>();
+            //});
 
             builder.ConfigureLogging(logging =>
             {
