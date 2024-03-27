@@ -1,7 +1,9 @@
 ﻿using FieldsManagement.Application.Commands.Users;
 using FieldsManagement.Core.Entities;
+using FieldsManagement.Core.ValueObjects;
 using FluentAssertions;
 using IntegrationTests.Factory;
+using IntegrationTests.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +28,7 @@ public class WorkerEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
     [Fact]
     public async Task WorkerEndpointsTest()
     {
-        var client = _webAppFactory.CreateClient();
+        var client = AuthHelper.Authorize(_webAppFactory, Guid.NewGuid(), Role.Admin().Value);
 
         var worker = new CreateWorker(
                              workerName: "John",

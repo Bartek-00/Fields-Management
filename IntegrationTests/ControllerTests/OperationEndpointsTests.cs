@@ -1,7 +1,9 @@
 ﻿using FieldsManagement.Application.Commands.Operations;
 using FieldsManagement.Core.Entities;
+using FieldsManagement.Core.ValueObjects;
 using FluentAssertions;
 using IntegrationTests.Factory;
+using IntegrationTests.Helpers;
 using System.Net;
 using System.Net.Http.Json;
 using Xunit.Abstractions;
@@ -21,7 +23,7 @@ public class OperationEndpointsTests : IClassFixture<FieldsManagementWebAplicati
     [Fact]
     public async Task CRUDOperationTests()
     {
-        var client = _webAppFactory.CreateClient();
+        var client = AuthHelper.Authorize(_webAppFactory, Guid.NewGuid(), Role.Admin().Value);
 
         var field = new Field(
                        fieldId: Guid.NewGuid(),
