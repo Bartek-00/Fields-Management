@@ -4,7 +4,7 @@ namespace FieldsManagement.Core.ValueObjects;
 
 public sealed record Role
 {
-    public static IEnumerable<string> AvailableRoles { get; } = new[] { "admin", "user", "is-admin" };
+    public static IEnumerable<string> AvailableRoles { get; } = new[] { "admin", "user" };
 
     public string Value { get; }
 
