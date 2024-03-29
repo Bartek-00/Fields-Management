@@ -8,7 +8,7 @@ public interface IFieldsRepository
 
     Task Update(Field fields);
 
-    Task Delete(Guid Id);
+    Task Delete(Guid fieldId);
 
     Task<List<Field>> FindByVillageName(string villageName);
 

@@ -1,6 +1,5 @@
 ﻿using FieldsManagement.Application.Commands;
 using FieldsManagement.Application.Commands.Fields;
-using FieldsManagement.Infrastructure.Queries;
 using FieldsManagement.Infrastructure.Queries.Fields;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

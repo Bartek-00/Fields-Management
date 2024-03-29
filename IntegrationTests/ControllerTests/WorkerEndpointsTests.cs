@@ -31,9 +31,9 @@ public class WorkerEndpointsTests : IClassFixture<FieldsManagementWebAplicationF
         var client = AuthHelper.Authorize(_webAppFactory, Guid.NewGuid(), Role.Admin().Value);
 
         var worker = new CreateWorker(
-                             workerName: "John",
-                             workerSurname: "Doe",
-                             additionalData: "123456789"
+                             WorkerName: "John",
+                             WorkerSurname: "Doe",
+                             AdditionalData: "123456789"
                              );
 
         var addWorker = await client.PostAsJsonAsync("/Worker", worker);
