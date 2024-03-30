@@ -7,7 +7,7 @@ const AnimationComponent: React.FC = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowText(true);
-        }, 200); // Opóźnienie animacji w milisekundach
+        }, 200); 
 
         return () => clearTimeout(timer);
     }, []);
