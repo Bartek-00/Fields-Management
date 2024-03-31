@@ -8,19 +8,19 @@ export function useCreateTodo() {
   return useMutation({
     mutationFn: (data: UserData) => createTodo(data),
     onMutate: () => {
-      console.log("mutate");
+      //console.log("mutate");
     },
 
     onError: () => {
-      console.log("error");
+      //console.log("error");
     },
 
     onSuccess: () => {
-      console.log("success");
+      //console.log("success");
     },
 
     onSettled: async (_, error) => {
-      console.log("settled");
+      //console.log("settled");
       if (error) {
         console.log(error);
       } else {
