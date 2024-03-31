@@ -12,7 +12,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLogin(true);
-    }, 5000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -21,7 +21,7 @@ const App: React.FC = () => {
     defaultOptions: {
       queries: {
         refetchOnWindowFocus: false,
-      },
+      }, 
     },
   });
 
@@ -29,9 +29,11 @@ const App: React.FC = () => {
     <div style={{backgroundImage: `url(${background})`, backgroundSize: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
       <QueryClientProvider client={queryClient}>
         <ChakraProvider>
-          <div style={{ width: '80%', backgroundColor: "rgba(30,30,30, 0.6)", display: 'flex', justifyContent: 'center' }}>
-            {showLogin ? <LoginComponent /> : <AnimationComponent />}
-          </div>
+            {showLogin ? 
+              <div style={{height: '100%', width: '80%', backgroundColor: "rgba(30,30,30, 0.6)", display: 'flex', justifyContent: 'center', margin: 'auto' }}>
+                <LoginComponent /> 
+              </div>
+            : <AnimationComponent />}
         </ChakraProvider>
       </QueryClientProvider>
     </div>
