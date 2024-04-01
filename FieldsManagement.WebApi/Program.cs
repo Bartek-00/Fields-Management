@@ -64,7 +64,10 @@ builder.Services.AddScoped<INotificationHandler<SignUp>, SignUpHandler>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowOrigin",
-        builder => builder.WithOrigins("http://localhost:3000"));
+        builder => builder
+            .WithOrigins("http://localhost:3000", "https://localhost:7138")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
 });
 
 var app = builder.Build();
