@@ -3,6 +3,27 @@
   background-image: url('farmland.jpg');
   background-size: cover;
   background-position: center;
-  background-size: '100%';
 }
+
+.backgroundDiv {
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('farmland.jpg');
+}
+
+.darkDiv {
+  height: 100%;
+  width: 80%;
+  background-color: rgba(30, 30, 30, 0.6);
+  display: flex;
+  margin: auto;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}
+
+
 

@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { UserData } from "../Types/UserData";
 import { createTodo } from "./api";
 
-export function useCreateTodo() {
+export function useLogin() {
   const queryClient = useQueryClient();
 
   return useMutation({
