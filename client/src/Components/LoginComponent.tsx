@@ -1,44 +1,73 @@
 import { SubmitHandler } from "react-hook-form";
-import {
-  useLogin,
-} from "../Hooks/mutation";
+import { useLogin } from "../Hooks/mutation";
 import { useForm } from "react-hook-form";
 import { UserData } from "../Types/UserData";
-import { redirect } from 'react-router-dom';
-
-
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 
 const LoginForm = () => {
+  const loginMutation = useLogin();
+  const { register, handleSubmit, reset } = useForm<UserData>();
+  const [loginError, setLoginError] = useState<string | null>(null);
 
-    const createTodoMutation = useLogin();
-    const { register, handleSubmit, reset,  formState: { isSubmitSuccessful }, } = useForm<UserData>();
-  
-    const handleCreateLoginSubmit: SubmitHandler<UserData> = (data) => {
-      var retunr = createTodoMutation.mutate(data);
-      console.log(retunr);
-      reset();
-    };
-    //todo next
-    if (isSubmitSuccessful) {
-      alert("Login successfully");
-      redirect('/home'); 
-    } else {
-      alert("Login Unsuccessfully");    
+  const handleCreateLoginSubmit: SubmitHandler<UserData> = async (data) => {
+    try {
+      await loginMutation.mutateAsync(data);
+      setLoginError("success");
+    } catch (error) {
+      setLoginError("Logowanie nie powiodło się.");
+      console.error("Wystąpił błąd podczas logowania:", error);
     }
+    reset();
+  };
+
+  if (loginMutation.isSuccess) {
+    return <Navigate to="/home" />;
+  }
 
   return (
     <form onSubmit={handleSubmit(handleCreateLoginSubmit)}>
-    <h4>New todo:</h4>
-    <input placeholder="userName" {...register("Email")} />
-    <br />
-    <input placeholder="password" {...register("Password")} />
-    <br />
-    <input
-      type="submit"
-      disabled={createTodoMutation.isPending}
-      value={createTodoMutation.isPending ? "Creating..." : "Login"}
-    />
-  </form>
+      <Stack spacing={4} fontSize="xl">
+        <FormControl id="email">
+          <FormLabel color="white">Email</FormLabel>
+          <Input
+            type="email"
+            placeholder="Email"
+            {...register("Email")}
+            isRequired
+            color="white"
+          />
+        </FormControl>
+        <FormControl id="password">
+          <FormLabel color="white">Password</FormLabel>
+          <Input
+            type="password"
+            placeholder="Password"
+            {...register("Password")}
+            isRequired
+            color="white"
+          />
+        </FormControl>
+        {loginError && <Text color="red.500">{loginError}</Text>}
+        <Button
+          type="submit"
+          colorScheme="blue"
+          isLoading={loginMutation.isPending}
+          fontSize="xl"
+          bg="blue.500"
+        >
+          {loginMutation.isPending ? "Logging in..." : "Login"}
+        </Button>
+      </Stack>
+    </form>
   );
 };
 

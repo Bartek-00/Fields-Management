@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import './styl/AnimationComponent.css';
+import React, { useEffect, useState } from "react";
+import "./styl/AnimationComponent.css";
 
 const AnimationComponent: React.FC = () => {
-    const [showText, setShowText] = useState<boolean>(false);
+  const [showText, setShowText] = useState<boolean>(false);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowText(true);
-        }, 200); 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowText(true);
+    }, 200);
 
-        return () => clearTimeout(timer);
-    }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-    return (
-        <div className="fullscreen-bg">
-            <div className="background-image" />
-            <div className="overlay">
-                <h1 className={showText ? "fadeIn" : ""}>Tekst Animowany</h1>
-            </div>
-        </div>
-    );
-}
+  return (
+    <div className="fullscreen-bg">
+      <div className="background-image" />
+      <div className="overlay">
+        <h1 className={showText ? "fadeIn" : ""}>Tekst Animowany</h1>
+      </div>
+    </div>
+  );
+};
 
 export default AnimationComponent;
