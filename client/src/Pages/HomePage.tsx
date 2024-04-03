@@ -1,7 +1,7 @@
 export default function HomePage() {
-    return (
-      <div>
-        <h1>Home Page</h1>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>Hhalloodsadiaso</h2>
+    </div>
+  );
+}
