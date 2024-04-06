@@ -1,23 +1,23 @@
 import axios from "axios";
 import { UserData } from "../Types/UserData";
-import { Field } from "react-hook-form";
-//import { Project } from "../types/project";
-//import { Product } from "../types/product";
+//import { Field } from "react-hook-form";
 
 const BASE_URL = "https://localhost:7138";
-const axiosInstance = axios.create({ baseURL: BASE_URL, 
-                                    withCredentials: false, 
-                                    headers: { "Content-Type": "application/json" }});
+const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+  withCredentials: false,
+  headers: { "Content-Type": "application/json" },
+});
 
 export const createTodo = async (data: UserData) => {
   const reponse = await axiosInstance.post("Users/sign-in", data);
   const token = reponse.data.token;
-  axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 };
- export const getProjects = async (data: UserData) => {
-   return (await axiosInstance.get<Field[]>(`Fields`))
-     .data;
- };
+// export const getProjects = async (data: UserData) => {
+//   // Use the `data` variable here if needed
+//   return (await axiosInstance.get<Field[]>(`Fields`)).data;
+// };
 
 // export const getProjects = async (page = 1) => {
 //   return (await axiosInstance.get<Project[]>(`projects?_page=${page}&_limit=3`))

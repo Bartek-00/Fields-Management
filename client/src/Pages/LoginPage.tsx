@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AnimationComponent from "./../Components/AnimationComponent";
 import LoginComponent from "./../Components/LoginComponent";
 import "./../App.css";
