@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import NotFoundPage from "./Pages/NotFoundPage";
 import LoginPage from "./Pages/LoginPage";
+import OperationsPage from "./Pages/OperationsPage";
+import WorkersPage from "./Pages/WorkersPage";
+import StatisticsPage from "./Pages/StatisticsPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -34,6 +37,26 @@ const router = createBrowserRouter([
     //     element: <HomePage />,
     //   },
     // ],
+  },
+  {
+    path: "/Operations",
+    element: <OperationsPage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/Fields",
+    element: <OperationsPage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/Workers",
+    element: <WorkersPage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/Statistics",
+    element: <StatisticsPage />,
+    errorElement: <NotFoundPage />,
   },
 ]);
 
