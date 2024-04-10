@@ -13,14 +13,19 @@ export default function LoginPage() {
   });
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "rgba(196, 252, 89, 1)",
+        backgroundImage:
+          "radial-gradient(circle, rgba(196, 252, 89, 1) 0%, rgba(50, 31, 12, 1) 100%)",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <QueryClientProvider client={queryClient}>
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          height="100vh"
-        >
+        <Box bgColor="black" width="25%" height="50%" p="3%" borderRadius="10%">
           <LoginComponent />
         </Box>
       </QueryClientProvider>
