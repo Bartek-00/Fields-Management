@@ -13,6 +13,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  padding: 1rem;
   background-image: url("/Animation/farmland.jpg");
 }

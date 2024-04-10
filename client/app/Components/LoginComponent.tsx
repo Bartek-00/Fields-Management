@@ -37,6 +37,9 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(handleCreateLoginSubmit)}>
       <Stack spacing={4} fontSize="xl">
+        <Text fontSize="3xl" color="white">
+          Zaloguj się
+        </Text>
         <FormControl id="email">
           <FormLabel color="white">Email</FormLabel>
           <Input
@@ -44,7 +47,7 @@ const LoginForm = () => {
             placeholder="Email"
             {...register("Email")}
             isRequired
-            color="black"
+            color="white"
           />
         </FormControl>
         <FormControl id="password">
@@ -54,7 +57,7 @@ const LoginForm = () => {
             placeholder="Password"
             {...register("Password")}
             isRequired
-            color="black"
+            color="white"
           />
         </FormControl>
         {loginError && <Text color="red.500">{loginError}</Text>}
@@ -63,7 +66,7 @@ const LoginForm = () => {
           colorScheme="blue"
           isLoading={loginMutation.isPending}
           fontSize="xl"
-          bg="blue.500"
+          bg="rgba(100, 125, 45, 1)"
         >
           {loginMutation.isPending ? "Logging in..." : "Login"}
         </Button>
