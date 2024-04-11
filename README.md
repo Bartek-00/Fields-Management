@@ -57,5 +57,3 @@ After completing these steps, the .NET project will be accessible at https://loc
 Here we have swagger which shows Some CRUD operations
 ![image](https://github.com/Bartek-00/Fields-Management/assets/75848807/21ea6d98-365e-4106-9ac6-2a47e831b457)
 
-LoginPage:
-![image](https://github.com/Bartek-00/Fields-Management/assets/75848807/acdc8291-d5ce-41af-9f41-208a66f03888)
