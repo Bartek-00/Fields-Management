@@ -1,9 +1,6 @@
 "use client";
-import { SubmitHandler } from "react-hook-form";
-import { useLogin } from "../Hooks/mutation";
-import { useForm } from "react-hook-form";
-import { UserData } from "../Types/UserData";
-import { useState } from "react";
+
+import { FormEvent, useState } from "react";
 import {
   Button,
   FormControl,
@@ -15,60 +12,54 @@ import {
 import Link from "next/link";
 
 const LoginForm = () => {
-  const loginMutation = useLogin();
-  const { register, handleSubmit, reset } = useForm<UserData>();
-  const [loginError, setLoginError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const handleCreateLoginSubmit: SubmitHandler<UserData> = async (data) => {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsLoading(true); // Set loading to true when the request starts
+
     try {
-      await loginMutation.mutateAsync(data);
-      setLoginError("success");
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch("https://localhost:7138/Users/sign-in", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      // ...
     } catch (error) {
-      setLoginError("Logowanie nie powiodło się.");
-      console.error("Wystąpił błąd podczas logowania:", error);
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
-    reset();
-  };
-
-  if (loginMutation.isSuccess) {
-    return <Link href="/home" />;
   }
 
   return (
-    <form onSubmit={handleSubmit(handleCreateLoginSubmit)}>
+    <form onSubmit={onSubmit}>
       <Stack spacing={4} fontSize="xl">
         <Text fontSize="3xl" color="white">
           Zaloguj się
         </Text>
         <FormControl id="email">
           <FormLabel color="white">Email</FormLabel>
-          <Input
-            type="email"
-            placeholder="Email"
-            {...register("Email")}
-            isRequired
-            color="white"
-          />
+          <Input type="email" placeholder="Email" isRequired color="white" />
         </FormControl>
         <FormControl id="password">
           <FormLabel color="white">Password</FormLabel>
           <Input
             type="password"
             placeholder="Password"
-            {...register("Password")}
             isRequired
             color="white"
           />
         </FormControl>
-        {loginError && <Text color="red.500">{loginError}</Text>}
         <Button
           type="submit"
+          disabled={isLoading}
           colorScheme="blue"
-          isLoading={loginMutation.isPending}
           fontSize="xl"
           bg="rgba(100, 125, 45, 1)"
         >
-          {loginMutation.isPending ? "Logging in..." : "Login"}
+          Zaloguj się
         </Button>
       </Stack>
     </form>
