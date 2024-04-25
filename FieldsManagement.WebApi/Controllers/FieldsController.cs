@@ -37,7 +37,7 @@ public class FieldsController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet]
-    [Authorize]
+    //[Authorize]
     public async Task<IActionResult> GetAll()
     {
         var fields = await mediator.Send(new GetAllFieldsQuery());
