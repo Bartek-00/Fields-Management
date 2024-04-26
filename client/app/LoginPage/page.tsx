@@ -2,7 +2,7 @@ async function getData() {
   const res = await fetch("https://localhost:7138/Fields");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
-
+  //dzisiaj magisterka
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
